@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description"
+        content="Premium Care Physiotherapy Center. See our services, book appointments, and meet our certified team. Accurate physical therapy exercises." />
+
+    <title>Premium Care | Physiotherapy Center</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Tajawal:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <style>
+        /* CSS Variables for easier management */
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #0056b3;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --accent-bg: #e0f7fa;
+            --form-bg: #f1f8ff;
+            --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 4px 10px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.1);
+            --font-inter: 'Inter', sans-serif;
+            --font-tajawal: 'Tajawal', sans-serif;
+        }
+
+        /* Base Reset and Font Integration */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-inter);
+            /* Default English font */
+            line-height: 1.6;
+            color: var(--text-color);
+            background: #fff;
+            transition: all 0.3s ease;
+        }
+
+        /* Arabic language styling */
+        body[dir='rtl'] {
+            font-family: var(--font-tajawal);
+            /* Arabic font */
+            text-align: right;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header */
+        .site-header {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            box-shadow: var(--shadow-light);
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1em 1.5em;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.6em;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5em;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 0.7em 1.4em;
+            border-radius: 25px;
+            font-weight: 700;
+            transition: background 0.3s;
+            border: none;
+            /* Ensure no default button border if used on a button */
+        }
+
+        .cta-button:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Language Switch */
+        #lang-switch {
+            background: none;
+            border: 1px solid #ccc;
+            padding: 0.5em 0.8em;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+            margin-left: 15px;
+            color: var(--text-color);
+        }
+
+        #lang-switch:hover {
+            background: var(--light-bg);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--accent-bg) 0%, var(--primary-color) 100%);
+            color: #fff;
+            padding: 6em 1em;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 1.5em;
+            opacity: 0.9;
+        }
+
+        /* Sections */
+        section {
+            padding: 5em 1.5em;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 1.5em;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        /* Services Grid */
+        .service-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+            justify-content: center;
+        }
+
+        .card {
+            background: var(--light-bg);
+            padding: 2em;
+            border-radius: 10px;
+            text-align: center;
+            flex: 1 1 300px;
+            box-shadow: var(--shadow-medium);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card img {
+            width: 70px;
+            margin: 0 auto 1em;
+        }
+
+        /* Location and Hours */
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2em;
+        }
+
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            padding: 1.5em;
+            /* Added padding for text */
+            background: var(--light-bg);
+            /* Added background for text */
+        }
+
+        .map-container h3,
+        .map-container p {
+            margin-bottom: 0.8em;
+        }
+
+        .hours-container {
+            padding: 1.5em;
+            background: var(--light-bg);
+            border-radius: 10px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .hours-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .hours-list li {
+            padding: 0.7em 0;
+            border-bottom: 1px dashed #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+
+        .hours-list li span {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .team-member {
+            flex: 1 1 250px;
+            background: #fff;
+            padding: 1.5em;
+            border-radius: 10px;
+            box-shadow: var(--shadow-medium);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1em;
+            border: 3px solid var(--primary-color);
+        }
+
+        .team-member h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5em;
+        }
+
+        /* Exercises */
+        .exercises-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2em;
+        }
+
+        .exercise-card {
+            background: var(--light-bg);
+            padding: 1.5em;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 5px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .exercise-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5em;
+            font-size: 1.2em;
+        }
+
+        .exercise-card p strong {
+            /* For the "Physics:" part */
+            color: var(--secondary-color);
+        }
+
+        /* Booking Form */
+        #bookingForm {
+            display: grid;
+            gap: 1.5em;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2em;
+            background: var(--form-bg);
+            border-radius: 10px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        #bookingForm select,
+        #bookingForm input,
+        #bookingForm textarea {
+            padding: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            font-family: inherit;
+            /* Inherit font from body */
+            font-size: 1em;
+        }
+
+        #bookingForm button {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 1em;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            font-weight: 700;
+            transition: background 0.3s;
+        }
+
+        #bookingForm button:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3em 1em;
+            background: #333;
+            color: #fff;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2em;
+                /* Smaller on mobile */
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            .nav-links {
+                /* For smaller screens, you might want a hamburger menu */
+                display: none;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                /* Allow items to wrap */
+                justify-content: center;
+                /* Center items when wrapped */
+            }
+
+            nav .logo,
+            nav>div {
+                flex-basis: 100%;
+                /* Make logo and buttons take full width */
+                text-align: center;
+                margin-bottom: 0.5em;
+                /* Add space below them */
+            }
+
+            nav>div {
+                display: flex;
+                justify-content: center;
+                margin-top: 1em;
+            }
+
+            #lang-switch {
+                margin-left: 0;
+                margin-right: 15px;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .map-container,
+            .hours-container {
+                padding: 1em;
+                /* Adjust padding for smaller screens */
+            }
+
+            .cta-button {
+                padding: 0.6em 1.2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .service-grid,
+            .team-grid,
+            .exercises-grid {
+                gap: 1.5em;
+            }
+
+            .card,
+            .team-member,
+            .exercise-card {
+                flex-basis: 100%;
+                /* Stack cards on very small screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <nav>
+            <a href="/" class="logo data-text" data-key="logo">Premium Care</a>
+            <ul class="nav-links">
+                <li><a href="#services" class="data-text" data-key="nav_services">Services</a></li>
+                <li><a href="#location" class="data-text" data-key="nav_location">Location & Hours</a></li>
+                <li><a href="#team" class="data-text" data-key="nav_team">Our Team</a></li>
+                <li><a href="#exercises" class="data-text" data-key="nav_exercises">Exercises</a></li>
+                <li><a href="#book" class="data-text" data-key="nav_book">Book</a></li>
+                <li><a href="#contact" class="data-text" data-key="nav_contact">Contact</a></li>
+            </ul>
+            <div>
+                <button id="lang-switch" class="data-text" data-key="lang_switch">العربية</button>
+                <a href="#book" class="cta-button data-text" data-key="cta_main">Book Now</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1 class="data-text" data-key="hero_title">Expert Physiotherapy & Rehabilitation Center</h1>
+            <p class="data-text" data-key="hero_subtitle">Your journey to recovery starts with Premium Care.</p>
+            <a href="#book" class="cta-button data-text" data-key="cta_hero">Start Your Booking</a>
+        </section>
+
+        <section id="services">
+            <h2 class="data-text" data-key="sec_services_title">Our Specialized Services</h2>
+            <div class="service-grid">
+                <div class="card">
+                    <img src="./assets/images/manual_therapy.jpg" alt="Manual Therapy Icon" />
+                    <h3 class="data-text" data-key="service_1_title">Manual Therapy</h3>
+                    <p class="data-text" data-key="service_1_desc">Hands-on techniques for joint mobilization and soft
+                        tissue release.</p>
+                </div>
+                <div class="card">
+                    <img src="./assets/images/electrotherapy.jpg" alt="Electrotherapy Icon" />
+                    <h3 class="data-text" data-key="service_2_title">Electrotherapy</h3>
+                    <p class="data-text" data-key="service_2_desc">Using advanced devices like ultrasound and TENS for
+                        pain
+                        management.</p>
+                </div>
+                <div class="card">
+                    <img src="./assets/images/rehab.jpg" alt="Rehabilitation Icon" />
+                    <h3 class="data-text" data-key="service_3_title">Post-Surgical Rehabilitation</h3>
+                    <p class="data-text" data-key="service_3_desc">Structured programs to regain strength and mobility
+                        after
+                        operations.</p>
+                </div>
+                <div class="card">
+                    <img src="./assets/images/clinical_nutrition.jpg" alt="Clinical Nutrition Icon" />
+                    <h3 class="data-text" data-key="service_4_title">Clinical Nutrition</h3>
+                    <p class="data-text" data-key="service_4_desc">Personalized nutrition plans for weight adjustment
+                        and
+                        overall health.</p>
+                </div>
+                <div class="card">
+                    <img src="./assets/images/sports_injuries.jpg" alt="Sports Injuries Icon" />
+                    <h3 class="data-text" data-key="service_5_title">Sports Injuries</h3>
+                    <p class="data-text" data-key="service_5_desc">Comprehensive care for athletic injuries to ensure a
+                        safe
+                        return to activity.</p>
+                </div>
+                <div class="card">
+                    <img src="./assets/images/neurological_rehab.jpg" alt="Neurological Rehabilitation Icon" />
+                    <h3 class="data-text" data-key="service_6_title">Neurological Rehabilitation</h3>
+                    <p class="data-text" data-key="service_6_desc">Specialized therapies for stroke, MS, and other
+                        neurological conditions.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="location">
+            <h2 class="data-text" data-key="sec_location_title">Location & Working Hours</h2>
+            <div class="location-grid">
+                <div class="map-container">
+                    <h3 class="data-text text-center" data-key="location_address_title">Our Location</h3>
+                    <p class="data-text text-center" data-key="location_address_details">El-Moatasem, Luxor City, Luxor,
+                        Luxor Governorate </p>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1468.5850609586194!2d32.647241431378376!3d25.69603049958273!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1761957016943!5m2!1sen!2seg"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="hours-container">
+                    <h3 class="data-text" data-key="hours_title">Working Hours</h3>
+                    <ul class="hours-list">
+                        <li class="data-text" data-key="hour_sat">Saturday <span>5:00 PM – 10:00 PM</span></li>
+                        <li class="data-text" data-key="hour_sun">Sunday <span>Closed</span></li>
+                        <li class="data-text" data-key="hour_mon">Monday <span>5:00 PM – 10:00 PM</span></li>
+                        <li class="data-text" data-key="hour_tue">Tuesday <span>5:00 PM – 10:00 PM</span></li>
+                        <li class="data-text" data-key="hour_wed">Wednesday <span>5:00 PM – 10:00 PM</span></li>
+                        <li class="data-text" data-key="hour_thu">Thursday <span>5:00 PM – 10:00 PM</span></li>
+                        <li class="data-text" data-key="hour_fri">Friday <span>5:00 PM – 10:00 PM</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="team">
+            <h2 class="data-text" data-key="sec_team_title">Meet Our Certified Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="./assets/images/clinic_photo_1.jpg" alt="Team Member 1" />
+                    <h3 class="data-text" data-key="team_1_name">Dr. Abanoub Emad</h3>
+                    <p class="data-text" data-key="team_1_title">Certified Physical Therapist</p>
+                    <p class="data-text" data-key="team_1_focus">Specializes in Spine injuries & Neurological
+                        rehabilitation & Clinical nutrition.</p>
+                </div>
+                <div class="team-member">
+                    <img src="./assets/images/clinic_photo_2.jpeg" alt="Team Member 2" />
+                    <h3 class="data-text" data-key="team_2_name">Dr. Christen Nasr</h3>
+                    <p class="data-text" data-key="team_2_title">Certified physical therapist</p>
+                    <p class="data-text" data-key="team_2_focus">specializes in Orthopedic & Post-surgical Rehab.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="exercises">
+            <h2 class="data-text" data-key="sec_exercises_title">Common Physiotherapy Exercises</h2>
+            <p class="data-text text-center" data-key="sec_exercises_subtitle">Understand the physics behind your
+                recovery.
+            </p>
+            <div class="exercises-grid">
+                <div class="exercise-card">
+                    <h4 class="data-text" data-key="ex_1_title">The Plank</h4>
+                    <p class="data-text" data-key="ex_1_desc">**Physics:** Engages the core (Rectus Abdominis and
+                        Obliques)
+                        isometrically. The goal is to maintain a neutral spine against gravity, maximizing muscle time
+                        under
+                        tension for stability and endurance, not strength.</p>
+                </div>
+                <div class="exercise-card">
+                    <h4 class="data-text" data-key="ex_2_title">Knee Extension (Terminal)</h4>
+                    <p class="data-text" data-key="ex_2_desc">**Physics:** Targets the VMO (Vastus Medialis Oblique) of
+                        the
+                        quadriceps. By focusing on the last 30 degrees of extension, it applies mechanical load
+                        specifically
+                        to improve tracking and stability around the patella (kneecap), critical for arthritis and
+                        post-op
+                        recovery.</p>
+                </div>
+                <div class="exercise-card">
+                    <h4 class="data-text" data-key="ex_3_title">Shoulder Scapular Squeezes</h4>
+                    <p class="data-text" data-key="ex_3_desc">**Physics:** Activates the Rhomboids and middle Trapezius
+                        muscles. This exercise emphasizes retraction and depression of the scapula (shoulder blade) to
+                        improve posture and create a stable base for the rotator cuff, following the principle of
+                        proximal
+                        stability for distal mobility.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="book">
+            <h2 class="data-text" data-key="sec_book_title">Request Your Appointment</h2>
+            <form id="bookingForm" class="booking-form">
+                <h3 class="data-text" data-key="sec_book_title">Request Your Appointment</h3>
+                <div class="input-group">
+                    <input type="text" id="name" name="name" class="data-attr" data-key="form_name_placeholder"
+                        placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="tel" id="phone" name="phone" class="data-attr" data-key="form_phone_placeholder"
+                        placeholder="Phone Number" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="bookingDate" name="bookingDate" class="data-attr"
+                        data-key="form_date_placeholder" placeholder="Select a Date" required>
+                </div>
+                <div class="input-group">
+                    <textarea id="condition" name="condition" class="data-attr" data-key="form_cond_placeholder"
+                        placeholder="Briefly describe your condition (e.g., lower back pain, knee replacement follow-up)"
+                        required></textarea>
+                </div>
+                <button type="submit" class="cta-button data-text" data-key="form_submit">Submit Booking
+                    Request</button>
+            </form>
+        </section>
+
+        <section id="contact">
+            <h2 class="data-text" data-key="sec_contact_title">Contact & Support</h2>
+            <div class="text-center">
+                <p class="data-text" data-key="contact_phone">
+                    <a href="tel:+201022562927" class="data-text" data-key="contact_phone_link">Phone: +201022562927</a>
+                </p>
+                <p class="data-text" data-key="contact_email">Email: premiumcarept.center@gmail.com</p>
+                <p class="data-text" data-key="contact_facebook">Facebook: <a
+                        href="https://www.facebook.com/share/1KHVbbyh4T/" target="_blank">Visit our page</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="data-text" data-key="footer_copy">© 2025 Premium Care Physiotherapy. All rights reserved.</p>
+        <p>
+            <a href="privacy-policy.html?lang=en" class="data-text" data-key="footer_privacy"
+                id="privacy-policy-link">Privacy Policy</a> ·
+            <a href="terms-of-service.html?lang=en" class="data-text" data-key="footer_terms"
+                id="terms-of-service-link">Terms of Service</a>
+        </p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ar.js"></script>
+    <script>
+        const TRANSLATIONS = {
+            en: {
+                // Header & Nav
+                logo: 'Premium Care',
+                nav_services: 'Services',
+                nav_location: 'Location & Hours',
+                nav_team: 'Our Team',
+                nav_exercises: 'Exercises',
+                nav_book: 'Book',
+                nav_contact: 'Contact',
+                cta_main: 'Book Now',
+                lang_switch: 'العربية',
+                // Hero
+                hero_title: 'Expert Physiotherapy & Rehabilitation Center',
+                hero_subtitle: 'Your journey to recovery starts with Premium Care.',
+                cta_hero: 'Start Your Booking',
+                // Services
+                sec_services_title: 'Our Specialized Services',
+                service_1_title: 'Manual Therapy',
+                service_1_desc: 'Hands-on techniques for joint mobilization and soft tissue release.',
+                service_2_title: 'Electrotherapy',
+                service_2_desc: 'Using advanced devices like ultrasound and TENS for pain management.',
+                service_3_title: 'Post-Surgical Rehabilitation',
+                service_3_desc: 'Structured programs to regain strength and mobility after operations.',
+                service_4_title: 'Clinical Nutrition',
+                service_4_desc: 'Personalized nutrition plans for weight adjustment and overall health.',
+                service_5_title: 'Sports Injuries',
+                service_5_desc: 'Comprehensive care for athletic injuries to ensure a safe return to activity.',
+                service_6_title: 'Neurological Rehabilitation',
+                service_6_desc: 'Specialized therapies for stroke, MS, and other neurological conditions.',
+                // Location & Hours
+                sec_location_title: 'Location & Working Hours',
+                location_address_title: 'Our Location',
+                location_address_details: 'El-Moatasem, Luxor City, Luxor, Luxor Governorate ',
+                hours_title: 'Working Hours',
+                hour_sat: 'Saturday <span>5:00 PM – 10:00 PM</span>',
+                hour_sun: 'Sunday <span>Closed</span>',
+                hour_mon: 'Monday <span>5:00 PM – 10:00 PM</span>',
+                hour_tue: 'Tuesday <span>5:00 PM – 10:00 PM</span>',
+                hour_wed: 'Wednesday <span>5:00 PM – 10:00 PM</span>',
+                hour_thu: 'Thursday <span>5:00 PM – 10:00 PM</span>',
+                hour_fri: 'Friday <span>5:00 PM – 10:00 PM</span>',
+                // Team
+                sec_team_title: 'Meet Our Certified Team',
+                team_1_name: 'Dr. Abanoub Emad',
+                team_1_title: 'Certified Physical Therapist',
+                team_1_focus: 'Specializes in Spine injuries & Neurological rehabilitation & Clinical nutrition.',
+                team_2_name: 'Dr. Christen Nasr',
+                team_2_title: 'Certified physical therapist',
+                team_2_focus: 'specializes in Orthopedic & Post-surgical Rehab.',
+
+                // Exercises
+                sec_exercises_title: 'Common Physiotherapy Exercises',
+                sec_exercises_subtitle: 'Understand the physics behind your recovery.',
+                ex_1_title: 'The Plank',
+                ex_1_desc: '**Physics:** Engages the core (Rectus Abdominis and Obliques) isometrically. The goal is to maintain a neutral spine against gravity, maximizing muscle time under tension for stability and endurance, not strength.',
+                ex_2_title: 'Knee Extension (Terminal)',
+                ex_2_desc: '**Physics:** Targets the VMO (Vastus Medialis Oblique) of the quadriceps. By focusing on the last 30 degrees of extension, it applies mechanical load specifically to improve tracking and stability around the patella (kneecap), critical for arthritis and post-op recovery.',
+                ex_3_title: 'Shoulder Scapular Squeezes',
+                ex_3_desc: '**Physics:** Activates the Rhomboids and middle Trapezius muscles. This exercise emphasizes retraction and depression of the scapula (shoulder blade) to improve posture and create a stable base for the rotator cuff, following the principle of proximal stability for distal mobility.',
+                // Booking
+                sec_book_title: 'Request Your Appointment',
+                form_name_placeholder: 'Full Name',
+                form_phone_placeholder: 'Phone Number',
+                form_date_placeholder: 'Select a Date',
+                form_cond_placeholder: 'Briefly describe your condition (e.g., lower back pain, knee replacement follow-up)',
+                form_submit: 'Submit Booking Request',
+                form_success_message: 'Your booking request has been prepared. Please confirm on WhatsApp to send it.', // Updated
+                whatsapp_message_template: 'Hello Premium Care! I would like to book an appointment for {date}. My name is {name}, phone number is {phone}, and my condition is: {condition}. Thank you!',
+                // Contact
+                contact_phone: 'Phone:<a href="tel:+201022562927"> +201022562927</a>',
+                contact_email: 'premiumcarept.center@gmail.com',
+                facebook_page: 'Facebook:<a href="https://www.facebook.com/share/1KHVbbyh4T/" target="_blank"> Visit our page</a>',
+                sec_contact_title: 'Contact & Support',
+                // Footer
+                footer_copy: '© 2025 Premium Care Physiotherapy. All rights reserved.',
+                footer_privacy: 'Privacy Policy',
+                footer_terms: 'Terms of Service',
+            },
+            ar: {
+                // Header & Nav
+                logo: 'بريميوم كير',
+                nav_services: 'الخدمات',
+                nav_location: 'الموقع وساعات العمل',
+                nav_team: 'فريقنا',
+                nav_exercises: 'تمارين شائعة',
+                nav_book: 'حجز موعد',
+                nav_contact: 'اتصل بنا',
+                cta_main: 'احجز الآن',
+                lang_switch: 'English',
+                // Hero
+                hero_title: 'مركز بريميوم كير للعلاج الطبيعي وإعادة التأهيل',
+                hero_subtitle: 'رحلتك نحو التعافي تبدأ مع بريميوم كير.',
+                cta_hero: 'احجز موعدك الان',
+                // Services
+                sec_services_title: 'خدماتنا المتخصصة',
+                service_1_title: 'العلاج اليدوي',
+                service_1_desc: 'تقنيات يدوية لتحريك المفاصل وتحرير الأنسجة الرخوة.',
+                service_2_title: 'العلاج بالكهرباء',
+                service_2_desc: 'استخدام أجهزة متقدمة كالموجات فوق الصوتية و TENS لتسكين الألم.',
+                service_3_title: 'إعادة التأهيل بعد الجراحة',
+                service_3_desc: 'برامج منظمة لاستعادة القوة والحركة بعد العمليات الجراحية.',
+                service_4_title: 'التغذية العلاجية',
+                service_4_desc: 'خطط تغذية مخصصة لتعديل الوزن والصحة العامة.',
+                service_5_title: 'إصابات الرياضة',
+                service_5_desc: 'رعاية شاملة لإصابات الرياضيين لضمان العودة الآمنة للنشاط.',
+                service_6_title: 'إعادة التأهيل العصبي',
+                service_6_desc: 'علاجات متخصصة للسكتة الدماغية، التصلب المتعدد، وغيرها من الحالات العصبية.',
+                // Location & Hours
+                sec_location_title: 'الموقع وساعات العمل',
+                location_address_title: 'موقعنا',
+                location_address_details: 'مصر، الاقصر، أمام نفق المحطة، شرق السكة الحديد، خلف صيدلية د.عبدالله',
+                hours_title: 'ساعات العمل',
+                hour_sat: 'السبت <span>5:00 مساءً – 10:00 مساءً</span>',
+                hour_sun: 'الأحد <span>مغلق</span>',
+                hour_mon: 'الإثنين <span>5:00 مساءً – 10:00 مساءً</span>',
+                hour_tue: 'الثلاثاء <span>5:00 مساءً – 10:00 مساءً</span>',
+                hour_wed: 'الأربعاء <span>5:00 مساءً – 10:00 مساءً</span>',
+                hour_thu: 'الخميس <span>5:00 مساءً – 10:00 مساءً</span>',
+                hour_fri: 'الجمعة <span>5:00 مساءً – 10:00 مساءً</span>',
+                // Team
+                sec_team_title: 'تعرف على فريقنا المعتمد',
+                team_1_name: 'د. أبانوب عماد',
+                team_1_title: 'أخصائي علاج طبيعي معتمد',
+                team_1_focus: 'متخصص في إصابات العمود الفقري وإعادة التأهيل العصبي والتغذية العلاجية.',
+                team_2_name: 'د. كريستين نصر',
+                team_2_title: 'أخصائية علاج طبيعي معتمدة',
+                team_2_focus: 'متخصصة في جراحة العظام وإعادة التأهيل بعد العمليات الجراحية.',
+
+                // Exercises
+                sec_exercises_title: 'تمارين العلاج الطبيعي الشائعة',
+                sec_exercises_subtitle: 'افهم الفيزياء الكامنة وراء تعافيك.',
+                ex_1_title: 'تمرين البلانك (Plank)',
+                ex_1_desc: '**الفيزياء:** يشرك عضلات الجذع (العضلة المستقيمة البطنية والعضلات المائلة) بشكل متساوي القياس. الهدف هو الحفاظ على العمود الفقري في وضع محايد ضد الجاذبية، مما يزيد من وقت بقاء العضلات تحت التوتر لتحقيق الاستقرار والتحمل، وليس القوة.',
+                ex_2_title: 'تمديد الركبة (الطرفي)',
+                ex_2_desc: '**الفيزياء:** يستهدف العضلة المتسعة الإنسية المائلة (VMO) من العضلة الرباعية. بالتركيز على آخر 30 درجة من التمديد، فإنه يطبق حملاً ميكانيكيًا خصيصًا لتحسين التتبع والاستقرار حول الرضفة (صابونة الركبة)، وهو أمر بالغ الأهمية لالتهاب المفاصل والتعافي بعد الجراحة.',
+                ex_3_title: 'عصر لوح الكتف',
+                ex_3_desc: '**الفيزياء:** ينشط العضلات المعينية والعضلة شبه المنحرفة الوسطى. يركز هذا التمرين على سحب وخفض لوح الكتف لتحسين الوضعية وإنشاء قاعدة مستقرة للكفة المدورة، باتباع مبدأ الاستقرار القريب للحركة البعيدة.',
+                // Booking
+                sec_book_title: 'اطلب موعدك',
+                form_name_placeholder: 'الاسم الكامل',
+                form_phone_placeholder: 'رقم الهاتف',
+                form_date_placeholder: 'اختر تاريخًا',
+                form_cond_placeholder: 'وصف موجز لحالتك (مثال: ألم أسفل الظهر، متابعة استبدال الركبة)',
+                form_submit: 'إرسال طلب الحجز',
+                form_success_message: 'تم تجهيز طلب حجزك. يرجى التأكيد على واتساب لإرساله.', // Updated
+                whatsapp_message_template: 'مرحباً بريميوم كير! أود حجز موعد لتاريخ {date}. اسمي: {name}، رقم هاتفي: {phone}، وحالتي هي: {condition}. شكرًا!', // UPDATED with {date}
+                // Contact
+                contact_phone_display: '<a href="tel:+201022562927">اتصل: +201022562927</a>', // النص الذي سيظهر كرابط
+                contact_email: 'البريد الإلكتروني: premiumcarept.center@gmail.com',
+                facebook_page: 'فيسبوك: <a href="https://www.facebook.com/share/1KHVbbyh4T/" target="_blank">قم بزيارة صفحتنا</a>',
+                sec_contact_title: 'للتواصل والدعم',
+                // Footer
+                footer_copy: '© 2025 بريميوم كير للعلاج الطبيعي. جميع الحقوق محفوظة.',
+                footer_privacy: 'سياسة الخصوصية',
+                footer_terms: 'شروط الخدمة',
+            }
+        };
+
+        // Flatpickr Initialization - يجب أن يكون هنا في النطاق العام (global scope)
+        let datePicker; // Declared globally
+
+        function initializeFlatpickr(lang) {
+            if (datePicker) { // Destroy previous instance if exists
+                datePicker.destroy();
+            }
+            datePicker = flatpickr("#bookingDate", {
+                minDate: "today", // Allow picking today or future dates
+                dateFormat: "Y-m-d (l)", // Date format for output (e.g., 2024-06-12)
+                locale: lang === 'ar' ? 'ar' : 'en', // Set locale based on current language
+                disable: [ // Optionally disable specific dates or days
+                    function (date) {
+                        // Disable Sundays (0 is Sunday, 6 is Saturday)
+                        return date.getDay() === 0;
+                    }
+                ],
+                // You can also add specific dates to disable/enable based on your clinic's schedule
+                // enable: [
+                //     { from: "2024-06-20", to: "2024-06-25" },
+                //     "2024-07-01"
+                // ]
+            });
+        } // <-- قوس الإغلاق الخاص بالدالة initializeFlatpickr
+
+        // Function to apply translations to elements
+        function applyTranslations(lang) {
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+            // Update text content
+            document.querySelectorAll('.data-text').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (key && TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) {
+                    // Use innerHTML for text that might contain HTML like <span> for hours
+                    el.innerHTML = TRANSLATIONS[lang][key];
+                }
+            });
+
+            // Update attributes like placeholder
+            document.querySelectorAll('.data-attr').forEach(el => {
+                const key = el.getAttribute('data-key');
+                const attr = el.getAttribute('data-attr') || 'placeholder'; // Default to 'placeholder'
+                if (key && TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) {
+                    el.setAttribute(attr, TRANSLATIONS[lang][key]);
+                }
+            });
+
+            // Update language switch button text specifically
+            const langSwitch = document.getElementById('lang-switch');
+            if (langSwitch) {
+                langSwitch.textContent = TRANSLATIONS[lang].lang_switch || (lang === 'ar' ? 'English' : 'العربية');
+            }
+            // Update the Privacy Policy link to pass the current language
+            const privacyLink = document.getElementById('privacy-policy-link');
+            if (privacyLink) {
+                privacyLink.href = `privacy-policy.html?lang=${lang}`;
+            }
+            // NEW: Update the Terms of Service link to pass the current language
+            const termsLink = document.getElementById('terms-of-service-link');
+            if (termsLink) {
+                termsLink.href = `terms-of-service.html?lang=${lang}`;
+            }
+            // Initialize/Re-initialize Flatpickr with the correct locale
+            initializeFlatpickr(lang); // Call this here!
+        }
+
+        // Default language detection (default to English)
+        let currentLang = 'en';
+        // Check if the browser's language starts with 'ar'
+        if (navigator.language && navigator.language.startsWith('ar')) {
+            currentLang = 'ar';
+        }
+        applyTranslations(currentLang); // Apply translations on initial load
+
+        // Toggle language on button click
+        const langBtn = document.getElementById('lang-switch');
+        if (langBtn) {
+            langBtn.addEventListener('click', function () {
+                currentLang = currentLang === 'en' ? 'ar' : 'en';
+                applyTranslations(currentLang);
+            });
+        }
+
+        // Basic booking form handler (prevents submission for demo)
+        const bookingForm = document.getElementById('bookingForm');
+        if (bookingForm) {
+            bookingForm.addEventListener('submit', function (e) {
+                e.preventDefault(); // Prevent actual form submission
+
+                const name = this.name.value; // Get value from input with name="name"
+                const phone = this.phone.value; // Get value from input with name="phone"
+                const bookingDate = this.bookingDate.value; // Get value from input with name="bookingDate"
+                const condition = this.condition.value; // Get value from textarea with name="condition"
+
+                // Basic validation (add bookingDate to validation)
+                if (!name || !phone || !bookingDate || !condition) {
+                    alert(currentLang === 'ar' ? 'الرجاء تعبئة جميع الحقول.' : 'Please fill in all fields.');
+                    return;
+                }
+
+                // Get the WhatsApp message template for the current language
+                let whatsappMessage = TRANSLATIONS[currentLang].whatsapp_message_template;
+
+                // Replace placeholders with actual form data
+                whatsappMessage = whatsappMessage
+                    .replace('{name}', name)
+                    .replace('{phone}', phone)
+                    .replace('{date}', bookingDate)
+                    .replace('{condition}', condition);
+
+                // Encode the message for a URL (important for spaces, special characters)
+                const encodedMessage = encodeURIComponent(whatsappMessage);
+
+                // Your WhatsApp Business phone number (include country code, without +, spaces, or dashes)
+                const whatsappNumber = '201022562927'; // Example: +201022562927 becomes 201022562927
+
+                // Construct the WhatsApp URL
+                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+                // Optionally, show a success message before redirecting
+                alert(TRANSLATIONS[currentLang].form_success_message);
+
+                // Redirect the user to WhatsApp
+                window.open(whatsappUrl, '_blank'); // Opens in a new tab
+
+                this.reset(); // Clear the form fields after "sending"
+                datePicker.clear(); // Clear the date picker after submission
+            });
+        }
+    </script>
+</body>
+
+</html>
