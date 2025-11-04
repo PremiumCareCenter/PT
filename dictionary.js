@@ -155,7 +155,7 @@ const dictionary = {
         'nav_contact': 'اتصل بنا',
 
         // Hero Section (index.html)
-        'hero_title': 'مركز خبير للعلاج الطبيعي وإعادة التأهيل',
+        'hero_title': 'مركز خبير في العلاج الطبيعي وإعادة التأهيل',
         'hero_subtitle': 'رحلتك نحو التعافي تبدأ مع بريميوم كير.',
         'cta_hero': 'ابدأ حجز موعدك',
 
