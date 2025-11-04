@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="data-text" data-key="nav_exercises">Physiotherapy Exercises</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Tajawal:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="exercises-page">
+
+    <header class="site-header">
+        <nav>
+            <a href="./" class="logo data-text" data-key="logo">Premium Care</a>
+            <ul class="nav-links">
+                <li><a href="index.html#services" class="data-text" data-key="nav_services">Services</a></li>
+                <li><a href="index.html#location" class="data-text" data-key="nav_location">Location & Hours</a></li>
+                <li><a href="index.html#team" class="data-text" data-key="nav_team">Our Team</a></li>
+                <li><a href="exercises.html" class="data-text" data-key="nav_exercises">Exercises</a></li>
+                <li><a href="index.html#book" class="data-text" data-key="nav_book">Book</a></li>
+                <li><a href="index.html#contact" class="data-text" data-key="nav_contact">Contact</a></li>
+            </ul>
+            <div>
+                <button id="lang-switch" class="data-text" data-key="lang_switch">العربية</button>
+                <a href="index.html#book" class="cta-button data-text" data-key="cta_main">Book Now</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="exercises-page" class="exercises-page-section">
+            <h1 class="data-text" data-key="sec_exercises_title">Common Physiotherapy Exercises</h1>
+            <p class="data-text text-center" data-key="sec_exercises_subtitle">Understand the physics behind your
+                recovery.</p>
+
+            <div class="exercises-grid">
+                <div class="exercise-card">
+                    <img src="assets/images/exercises/the-plank.jpg" alt="Plank Exercise">
+                    <div>
+                        <h4 class="data-text" data-key="ex_1_title">The Plank</h4>
+                        <p class="data-text" data-key="ex_1_desc">
+                            <strong>Physics:</strong> Engages core muscles (rectus abdominis, obliques) isometrically.
+                            The goal is to maintain a neutral spine against gravity, increasing muscles' time under
+                            tension for stability and endurance, not strength.
+                        </p>
+                    </div>
+                    <button class="cta-button learn-more-button data-text" data-key="learn_more"
+                        onclick="setModalContent('ex_1_title', 'ex_1_full_desc')">
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="exercise-card">
+                    <img src="assets/images/exercises/knee-extension.jpg" alt="Terminal Knee Extension">
+                    <div>
+                        <h4 class="data-text" data-key="ex_2_title">Terminal Knee Extension (TKE)</h4>
+                        <p class="data-text" data-key="ex_2_desc">
+                            <strong>Physics:</strong> Targets the vastus medialis obliquus (VMO) of the quadriceps. By
+                            focusing on the last 30 degrees of extension, it applies mechanical load specifically to
+                            improve patellar tracking and stability around the kneecap, crucial for arthritis and
+                            post-surgical recovery.
+                        </p>
+                    </div>
+                    <button class="cta-button learn-more-button data-text" data-key="learn_more"
+                        onclick="setModalContent('ex_2_title', 'ex_2_full_desc')">
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="exercise-card">
+                    <img src="assets/images/exercises/shoulder-squeezes.jpg" alt="Scapular Squeezes">
+                    <div>
+                        <h4 class="data-text" data-key="ex_3_title">Scapular Squeezes</h4>
+                        <p class="data-text" data-key="ex_3_desc">
+                            <strong>Physics:</strong> Activates the rhomboids and middle trapezius. This exercise
+                            focuses on retracting and depressing the scapula to improve posture and create a stable base
+                            for the rotator cuff, following the principle of proximal stability for distal mobility.
+                        </p>
+                    </div>
+                    <button class="cta-button learn-more-button data-text" data-key="learn_more"
+                        onclick="setModalContent('ex_3_title', 'ex_3_full_desc')">
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="exercise-card">
+                    <img src="assets/images/exercises/glute-bridge.jpg" alt="Glute Bridge Exercise">
+                    <div>
+                        <h4 class="data-text" data-key="ex_4_title">Glute Bridges</h4>
+                        <p class="data-text" data-key="ex_4_desc">
+                            <strong>Physics:</strong> Primarily targets the gluteus maximus and hamstrings. This
+                            exercise works by extending the hips against gravity, strengthening the posterior chain
+                            muscles which are vital for lumbar stability, hip extension power, and preventing lower back
+                            pain by improving muscle imbalances.
+                        </p>
+                    </div>
+                    <button class="cta-button learn-more-button data-text" data-key="learn_more"
+                        onclick="setModalContent('ex_4_title', 'ex_4_full_desc')">
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="exercise-card">
+                    <img src="assets/images/exercises/bird-dog.jpg" alt="Bird-Dog Exercise">
+                    <div>
+                        <h4 class="data-text" data-key="ex_5_title">Bird-Dog</h4>
+                        <p class="data-text" data-key="ex_5_desc">
+                            <strong>Physics:</strong> A core stability exercise that improves lumbopelvic control and
+                            balance. It challenges the deep core stabilizers (transversus abdominis, multifidus) to
+                            maintain a neutral spine while moving the limbs, enhancing proprioception and dynamic
+                            stability.
+                        </p>
+                    </div>
+                    <button class="cta-button learn-more-button data-text" data-key="learn_more"
+                        onclick="setModalContent('ex_5_title', 'ex_5_full_desc')">
+                        Learn More
+                    </button>
+                </div>
+
+                <div class="exercise-card">
+                    <img src="assets/images/exercises/squatting.jpg" alt="Squatting Exercise">
+                    <div>
+                        <h4 class="data-text" data-key="ex_6_title">Squatting</h4>
+                        <p class="data-text" data-key="ex_6_desc">
+                            <strong>Physics:</strong>The squat is a fundamental full-body exercise that involves
+                            lowering your hips from a standing position and then standing back up. It primarily targets
+                            the quadriceps, hamstrings, gluteus maximus, and core muscles. The exercise utilizes
+                            the movement against gravitational forces to build strength, power, and endurance in the
+                            lower body while also engaging stabilizing muscles for balance and coordination.
+                        </p>
+                    </div>
+                    <button class="cta-button learn-more-button data-text" data-key="learn_more"
+                        onclick="setModalContent('ex_6_title', 'ex_6_full_desc')">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="data-text" data-key="footer_copy">© 2025 Premium Care Physiotherapy. All rights reserved.</p>
+        <p>
+            <a href="privacy-policy.html?lang=en" class="data-text" data-key="footer_privacy"
+                id="privacy-policy-link">Privacy Policy</a> ·
+            <a href="terms-of-service.html?lang=en" class="data-text" data-key="footer_terms"
+                id="terms-of-service-link">Terms of Service</a>
+        </p>
+    </footer>
+
+    <div id="exerciseModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 id="modalTitle" class="data-text"></h3>
+            <p id="modalDescription" class="data-text"></p>
+        </div>
+    </div>
+
+    <script src="dictionary.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
