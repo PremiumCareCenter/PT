@@ -280,4 +280,19 @@ document.addEventListener('DOMContentLoaded', () => {
             exerciseModal.style.display = 'none';
         }
     }
+
+    // Close the menu after clicking a link
+    const navLinksList = document.querySelectorAll('.nav-links a');
+
+    navLinksList.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            const icon = hamburgerMenu.querySelector('i');
+            if (icon) {
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            }
+        });
+    });
+
 }); // End of main DOMContentLoaded event listener
