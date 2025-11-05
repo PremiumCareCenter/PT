@@ -9,14 +9,31 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Tajawal:wght@400;700&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="./assets/images/logo.jpeg" type="image/jpeg">
     <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --pc-teal: #1A6F7A;
+            --pc-silver: #B0C4DE;
+            --pc-dark: #0F3D45;
+        }
+
+        /* Logo size in header */
+        .site-header .logo img {
+            height: 120px;
+            width: auto;
+            display: block;
+        }
+    </style>
 </head>
 
 <body id="exercises-page">
 
     <header class="site-header">
         <nav>
-            <a href="./" class="logo data-text" data-key="logo">Premium Care</a>
+            <a href="./" class="logo">
+                <img src="./assets/images/logo.jpeg" alt="Premium Care Logo">
+            </a>
             <ul class="nav-links">
                 <li><a href="index.html#services" class="data-text" data-key="nav_services">Services</a></li>
                 <li><a href="index.html#location" class="data-text" data-key="nav_location">Location & Hours</a></li>

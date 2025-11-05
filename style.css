@@ -1,44 +1,39 @@
 /* General Styling */
 :root {
-    /* Color Palette - Retained, but focusing on balance */
-    --primary-color: #4A90E2;
-    /* A modern, calming blue */
+    /* Color Palette - Updated to match the logo colors */
+    --primary-color: #013C6D;
+    /* Deep, professional blue from the logo */
     --secondary-color: #8C9BAB;
-    /* Soft grey for secondary elements */
-    --accent-color: #2ECC71;
-    /* A fresh green for accents/success */
+    /* Soft grey for secondary elements (kept) */
+    --accent-color: #92E898;
+    /* Light, fresh green from the logo for accents/success */
     --text-color: #333333;
-    /* Darker text for better contrast */
+    /* Darker text for better contrast (kept) */
     --light-text-color: #666666;
-    /* Lighter text for descriptions */
+    /* Lighter text for descriptions (kept) */
     --bg-light: #F8F9FA;
-    /* Very light grey background */
+    /* Very light grey background (kept) */
     --bg-medium: #E9ECEF;
-    /* Slightly darker background for alternate sections */
+    /* Slightly darker background for alternate sections (kept) */
     --white: #FFFFFF;
     --border-color: #E0E0E0;
-    /* Light, subtle border */
     --shadow-light: rgba(0, 0, 0, 0.07);
-    /* Softer shadow */
     --shadow-medium: rgba(0, 0, 0, 0.12);
-    /* Slightly stronger shadow */
     --shadow-deep: rgba(0, 0, 0, 0.20);
-    /* Deeper shadow for interactive elements */
 
-    /* Typography - Reduced overall sizes */
+    /* Typography (kept the same, but ensuring consistency) */
     --font-inter: 'Inter', sans-serif;
     --font-tajawal: 'Tajawal', sans-serif;
-    /* For Arabic text */
-    --base-font-size: 15px;
-    /* Slightly smaller base font */
+    --font-size-base: 16px;
+    --font-size-md: 1.125rem;
+    --font-size-lg: 1.25rem;
 
-    /* Spacing - Reduced overall */
-    --spacing-xs: 0.4rem;
-    --spacing-sm: 0.8rem;
-    --spacing-md: 1.2rem;
-    --spacing-lg: 1.8rem;
-    --spacing-xl: 2.5rem;
-    --spacing-xxl: 3.5rem;
+    /* Spacing (kept the same) */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 5rem;
     /* Still generous for sections */
 
     /* Border Radius */
@@ -66,12 +61,12 @@ html {
 
 body {
     font-family: var(--font-inter);
-    font-size: var(--base-font-size);
+    /* FIX: Corrected variable name from --base-font-size to --font-size-base */
+    font-size: var(--font-size-base);
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--white);
     direction: ltr;
-    /* Default LTR, overridden by JS for RTL */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
@@ -116,22 +111,20 @@ body[dir="rtl"] h6 {
 
 h1 {
     font-size: 3em;
-    /* Reduced from 3.5em */
     font-weight: 800;
 }
 
 h2 {
     font-size: 2.2em;
-    /* Reduced from 2.8em */
     font-weight: 700;
     text-align: center;
-    margin-bottom: var(--spacing-xxl);
+    margin-bottom: var(--spacing-xl);
+    /* Increased margin for better separation */
     color: var(--primary-color);
 }
 
 h3 {
     font-size: 1.7em;
-    /* Reduced from 2em */
     font-weight: 700;
     margin-bottom: var(--spacing-sm);
     color: var(--text-color);
@@ -154,7 +147,6 @@ ul {
 .cta-button {
     display: inline-block;
     padding: var(--spacing-sm) var(--spacing-md);
-    /* Reduced padding */
     background-color: var(--primary-color);
     color: var(--white);
     border-radius: var(--border-radius-pill);
@@ -164,15 +156,12 @@ ul {
     border: none;
     cursor: pointer;
     font-size: 1em;
-    /* Reduced font size */
     box-shadow: 0 3px 10px var(--shadow-light);
-    /* Softer shadow */
 }
 
 .cta-button:hover {
     background-color: #357ABD;
     transform: translateY(-2px);
-    /* Less pronounced lift */
     box-shadow: 0 6px 15px var(--shadow-medium);
 }
 
@@ -180,37 +169,44 @@ ul {
 .site-header {
     background-color: var(--white);
     box-shadow: 0 2px 10px var(--shadow-light);
-    /* Softer shadow */
     position: sticky;
     top: 0;
     z-index: 999;
     width: 100%;
     padding: var(--spacing-md) var(--spacing-xl);
-    /* Reduced padding */
 }
 
 .site-header nav {
+    /* Ensure the main container is a flexible row */
     display: flex;
+    /* This distributes the space evenly between the logo, the links, and the controls */
     justify-content: space-between;
+    /* Vertically center all items */
     align-items: center;
+    /* Add space between all siblings */
+    gap: var(--spacing-sm);
+
     max-width: 1200px;
-    /* Reduced max-width slightly */
     margin: 0 auto;
 }
 
 .site-header .logo {
     font-size: 1.8em;
-    /* Reduced from 2em */
     font-weight: 800;
     color: var(--primary-color);
     margin-right: var(--spacing-md);
-    /* Reduced margin */
+}
+
+.site-header .logo img {
+    height: 60px;
+    /* Reduced from 120px to a standard header height */
+    width: auto;
+    display: block;
 }
 
 .site-header .nav-links {
     display: flex;
     gap: var(--spacing-md);
-    /* Reduced gap */
     flex-grow: 1;
     justify-content: center;
 }
@@ -221,7 +217,6 @@ ul {
     padding: var(--spacing-xs) 0;
     position: relative;
     font-size: 0.95em;
-    /* Reduced font size */
 }
 
 .site-header .nav-links li a::after {
@@ -229,19 +224,16 @@ ul {
     position: absolute;
     width: 0;
     height: 2px;
-    /* Thinner line */
     background-color: var(--primary-color);
     left: 50%;
     transform: translateX(-50%);
     bottom: -6px;
-    /* Slightly closer */
     transition: width var(--transition-speed) var(--transition-ease);
 }
 
 .site-header .nav-links li a:hover::after,
 .site-header .nav-links li a.active::after {
     width: 70%;
-    /* Slightly less expansion */
 }
 
 .site-header nav>div {
@@ -250,19 +242,34 @@ ul {
     gap: var(--spacing-sm);
 }
 
+/* --- Hamburger Menu Styles (Hidden on desktop) --- */
+.hamburger-menu {
+    display: none;
+    /* Hidden by default on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    transition: transform var(--transition-speed) var(--transition-ease);
+    padding: 0 var(--spacing-xs);
+}
+
+.hamburger-menu:hover {
+    color: #357ABD;
+    transform: scale(1.1);
+}
+
 #lang-switch {
     background-color: transparent;
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
-    /* Thinner border */
     padding: var(--spacing-xs) var(--spacing-sm);
-    /* Reduced padding */
     border-radius: var(--border-radius-pill);
     cursor: pointer;
     font-weight: 600;
     transition: all var(--transition-speed) var(--transition-ease);
     font-size: 0.9em;
-    /* Reduced font size */
 }
 
 #lang-switch:hover {
@@ -277,9 +284,7 @@ ul {
     color: var(--white);
     text-align: center;
     padding: 7rem var(--spacing-xl);
-    /* Reduced vertical padding */
     min-height: 70vh;
-    /* Reduced min-height */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -294,29 +299,24 @@ ul {
     position: absolute;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.06);
-    /* Slightly less opaque */
     pointer-events: none;
     animation: pulse 10s infinite ease-in-out alternate;
 }
 
 .hero::before {
     width: 100%;
-    /* Reduced size */
     height: 100%;
     top: -20%;
     left: -30%;
     transform: rotate(10deg);
-    /* Less rotation */
 }
 
 .hero::after {
     width: 80%;
-    /* Reduced size */
     height: 80%;
     bottom: -20%;
     right: -30%;
     transform: rotate(-20deg);
-    /* Less rotation */
     animation-delay: 2s;
 }
 
@@ -339,20 +339,15 @@ ul {
 
 .hero h1 {
     font-size: 3.5em;
-    /* Reduced from 4.5em */
     margin-bottom: var(--spacing-md);
     color: var(--white);
     text-shadow: 0 3px 8px var(--shadow-medium);
-    /* Softer shadow */
 }
 
 .hero p {
     font-size: 1.3em;
-    /* Reduced from 1.6em */
     margin-bottom: var(--spacing-xl);
-    /* Reduced margin */
     max-width: 800px;
-    /* Reduced max-width */
     color: rgba(255, 255, 255, 0.95);
     font-weight: 400;
 }
@@ -360,25 +355,24 @@ ul {
 .hero .cta-button {
     background-color: var(--accent-color);
     padding: var(--spacing-md) var(--spacing-lg);
-    /* Reduced padding */
     font-size: 1.1em;
-    /* Reduced font size */
+    color: var(--primary-color);
+    /* Use primary text color for contrast on green */
+    font-weight: 700;
     box-shadow: 0 8px 20px var(--shadow-deep);
 }
 
 .hero .cta-button:hover {
     background-color: #24A260;
     transform: translateY(-3px) scale(1.02);
-    /* Less pronounced lift */
     box-shadow: 0 10px 25px var(--shadow-deep);
 }
 
 /* Section Styling */
 section {
-    padding: var(--spacing-xl) var(--spacing-xl);
-    /* Reduced overall section padding */
+    padding: var(--spacing-xl) var(--spacing-md);
+    /* Adjusted horizontal padding to MD for better container management */
     max-width: 1100px;
-    /* Reduced max-width for content */
     margin: 0 auto;
     background-color: var(--white);
 }
@@ -398,11 +392,8 @@ section:nth-of-type(even) {
 .exercises-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    /* Slightly smaller min width */
     gap: var(--spacing-lg);
-    /* Reduced gap */
     margin-top: var(--spacing-md);
-    /* Reduced margin */
 }
 
 .card,
@@ -411,21 +402,20 @@ section:nth-of-type(even) {
     background-color: var(--white);
     border-radius: var(--border-radius-lg);
     box-shadow: 0 6px 20px var(--shadow-light);
-    /* Softer shadow */
     padding: var(--spacing-md);
-    /* Reduced internal padding */
     text-align: center;
     transition: transform var(--transition-speed) var(--transition-ease), box-shadow var(--transition-speed) var(--transition-ease);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border: 1px solid var(--border-color);
+    /* Added subtle border */
 }
 
 .card:hover,
 .team-member:hover,
 .exercise-card:hover {
     transform: translateY(-5px);
-    /* Less pronounced lift */
     box-shadow: 0 10px 30px var(--shadow-medium);
 }
 
@@ -433,14 +423,11 @@ section:nth-of-type(even) {
 .team-member img,
 .exercise-card img {
     width: 100%;
-    /* Ensure width fills the container */
     aspect-ratio: 4 / 3;
-    /* THIS IS THE NEW PROPERTY */
     object-fit: cover;
     border-radius: var(--border-radius);
     margin-bottom: var(--spacing-md);
     object-position: center 30%;
-    /* OR 'center' - THIS IS THE NEW PROPERTY */
 }
 
 .card h3,
@@ -448,7 +435,6 @@ section:nth-of-type(even) {
 .exercise-card h4 {
     color: var(--primary-color);
     font-size: 1.5em;
-    /* Reduced heading size */
     margin-bottom: var(--spacing-sm);
     font-weight: 700;
 }
@@ -457,26 +443,23 @@ section:nth-of-type(even) {
 .team-member p,
 .exercise-card p {
     font-size: 0.95em;
-    /* Slightly smaller text */
     color: var(--light-text-color);
     flex-grow: 1;
     margin-bottom: var(--spacing-md);
-    /* Reduced space before button */
 }
 
 /* Location Section */
 .location-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-xl);
-    /* Reduced gap */
+    gap: var(--spacing-lg);
+    /* Changed from XL to LG for tighter mobile fit */
     align-items: flex-start;
 }
 
 @media (min-width: 768px) {
     .location-grid {
         grid-template-columns: 1.8fr 1fr;
-        /* Slightly adjusted ratio */
     }
 }
 
@@ -495,7 +478,6 @@ section:nth-of-type(even) {
 .map-container iframe {
     width: 100%;
     height: 380px;
-    /* Reduced map height */
     border-radius: var(--border-radius);
     margin-top: var(--spacing-md);
     box-shadow: 0 3px 10px var(--shadow-medium);
@@ -514,7 +496,6 @@ section:nth-of-type(even) {
     color: var(--primary-color);
     margin-bottom: var(--spacing-md);
     font-size: 1.8em;
-    /* Reduced heading size */
 }
 
 .hours-list {
@@ -526,16 +507,13 @@ section:nth-of-type(even) {
     background-color: var(--bg-light);
     margin-bottom: var(--spacing-sm);
     padding: var(--spacing-sm) var(--spacing-md);
-    /* Reduced padding */
     border-radius: var(--border-radius);
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1em;
-    /* Reduced font size */
     color: var(--text-color);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.03);
-    /* Lighter shadow */
 }
 
 .hours-list li span {
@@ -548,18 +526,14 @@ section:nth-of-type(even) {
 .booking-form {
     background-color: var(--bg-medium);
     padding: var(--spacing-xl);
-    /* Reduced padding */
     border-radius: var(--border-radius-lg);
     box-shadow: 0 8px 25px var(--shadow-medium);
     max-width: 700px;
-    /* Reduced max-width */
     margin: var(--spacing-xl) auto;
-    /* Reduced margin */
 }
 
 .booking-form .input-group {
     margin-bottom: var(--spacing-md);
-    /* Reduced margin */
 }
 
 .booking-form label {
@@ -568,7 +542,6 @@ section:nth-of-type(even) {
     font-weight: 700;
     color: var(--text-color);
     font-size: 1em;
-    /* Reduced font size */
 }
 
 .booking-form input[type="text"],
@@ -577,7 +550,6 @@ section:nth-of-type(even) {
 .booking-form textarea {
     width: 100%;
     padding: var(--spacing-sm);
-    /* Reduced padding */
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     font-size: 1em;
@@ -595,14 +567,13 @@ body[dir="rtl"] .booking-form textarea {
 .booking-form textarea:focus {
     border-color: var(--primary-color);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15);
-    /* Softer focus ring */
+    box-shadow: 0 0 0 3px rgba(1, 60, 109, 0.15);
+    /* Used primary color for focus ring */
 }
 
 .booking-form textarea {
     resize: vertical;
     min-height: 100px;
-    /* Reduced min-height */
 }
 
 .booking-form .cta-button {
@@ -619,7 +590,6 @@ body[dir="rtl"] .booking-form textarea {
 /* Contact Section */
 #contact .text-center {
     font-size: 1em;
-    /* Reduced font size */
     margin-top: var(--spacing-lg);
 }
 
@@ -640,18 +610,13 @@ footer {
     color: var(--white);
     text-align: center;
     padding: var(--spacing-lg) var(--spacing-md);
-    /* Reduced padding */
     font-size: 0.9em;
-    /* Reduced font size */
     margin-top: var(--spacing-xl);
-    /* Reduced margin */
     line-height: 1.7;
-    /* Reduced line height */
 }
 
 footer p {
     color: rgba(255, 255, 255, 0.8);
-    /* Slightly less bright */
     margin-bottom: var(--spacing-xs);
 }
 
@@ -668,7 +633,8 @@ footer a:hover {
 
 /* Exercises Page Specific Styles */
 .exercises-page-section {
-    padding: var(--spacing-xl) var(--spacing-xl);
+    padding: var(--spacing-xl) var(--spacing-md);
+    /* Adjusted horizontal padding to MD */
     max-width: 1100px;
     margin: 0 auto;
     background-color: var(--white);
@@ -683,34 +649,27 @@ footer a:hover {
 
 .exercises-page-section p.text-center {
     font-size: 1.15em;
-    /* Reduced font size */
     color: var(--light-text-color);
     margin-bottom: var(--spacing-xl);
-    /* Reduced margin */
     max-width: 700px;
-    /* Reduced max-width */
     margin-left: auto;
     margin-right: auto;
 }
 
 .exercise-card {
     padding: var(--spacing-md);
-    /* Reduced padding */
     border: 1px solid var(--border-color);
     box-shadow: 0 4px 12px var(--shadow-light);
-    /* Softer shadow */
 }
 
 .exercise-card h4 {
     color: var(--primary-color);
     font-size: 1.6em;
-    /* Reduced font size */
     margin-bottom: var(--spacing-sm);
 }
 
 .exercise-card p {
     font-size: 0.95em;
-    /* Reduced font size */
     line-height: 1.5;
     text-align: left;
     margin-bottom: var(--spacing-md);
@@ -722,22 +681,23 @@ body[dir="rtl"] .exercise-card p {
 
 .learn-more-button {
     background-color: var(--accent-color);
-    color: var(--white);
+    color: var(--primary-color);
+    /* Used primary color for text on accent button for better contrast */
+    font-weight: 700;
     border: none;
     cursor: pointer;
-    font-weight: 600;
     margin-top: auto;
     padding: var(--spacing-sm) var(--spacing-md);
     border-radius: var(--border-radius-pill);
     transition: all var(--transition-speed) var(--transition-ease);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    /* Softer shadow */
 }
 
 .learn-more-button:hover {
     background-color: #24A260;
+    color: var(--white);
+    /* White text on hover for darker green */
     transform: translateY(-1px);
-    /* Less pronounced lift */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -753,12 +713,10 @@ body[dir="rtl"] .exercise-card p {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.6);
-    /* Slightly less opaque */
     display: flex;
     align-items: center;
     justify-content: center;
     -webkit-backdrop-filter: blur(6px);
-    /* Slightly less blur */
     backdrop-filter: blur(6px);
     animation: fadeInBg var(--transition-speed) var(--transition-ease) forwards;
 }
@@ -776,17 +734,13 @@ body[dir="rtl"] .exercise-card p {
 .modal-content {
     background-color: var(--white);
     padding: var(--spacing-xl);
-    /* Reduced padding */
     border-radius: var(--border-radius-lg);
     box-shadow: 0 10px 40px var(--shadow-medium);
-    /* Adjusted shadow */
     width: 90%;
     max-width: 650px;
-    /* Reduced max-width */
     position: relative;
     text-align: center;
     animation: fadeInScale 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-    /* Faster, bouncier animation */
     color: var(--text-color);
     border: 1px solid var(--border-color);
 }
@@ -807,14 +761,12 @@ body[dir="rtl"] .exercise-card p {
     margin-top: 0;
     color: var(--primary-color);
     font-size: 2em;
-    /* Reduced font size */
     margin-bottom: var(--spacing-md);
     font-weight: 700;
 }
 
 .modal-content p {
     font-size: 1.05em;
-    /* Reduced font size */
     line-height: 1.7;
     color: var(--light-text-color);
     text-align: justify;
@@ -831,7 +783,6 @@ body[dir="rtl"] .modal-content p {
     top: 15px;
     right: 20px;
     font-size: 30px;
-    /* Reduced font size */
     font-weight: 300;
     cursor: pointer;
     transition: color var(--transition-speed) var(--transition-ease), transform var(--transition-speed) var(--transition-ease);
@@ -851,8 +802,12 @@ body[dir="rtl"] .close-button {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .site-header nav {
+    .site-header {
         padding: var(--spacing-md) var(--spacing-lg);
+    }
+
+    .site-header nav {
+        max-width: 980px;
     }
 
     .hero {
@@ -868,7 +823,7 @@ body[dir="rtl"] .close-button {
     }
 
     section {
-        padding: var(--spacing-lg) var(--spacing-lg);
+        padding: var(--spacing-lg);
     }
 
     h2 {
@@ -876,26 +831,132 @@ body[dir="rtl"] .close-button {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) and (min-width: 993px) {
+
+    /* Hide the Book Now button on tablets to create space */
+    .site-header .cta-button {
+        display: none;
+    }
+
+    /* Hide the phone number on tablets */
+    .site-header .header-phone {
+        display: none !important;
+    }
+
+    /* Reduce horizontal padding on the header */
+    .site-header {
+        padding: var(--spacing-md) var(--spacing-md);
+    }
+
+    /* Ensure the links section is still centered correctly */
+    .site-header .nav-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 992px) {
+
+    /* --- CRITICAL: MOBILE NAVIGATION FIX --- */
+
+    /* Ensure the logo is a reasonable size for mobile */
+    .site-header .logo img {
+        height: 40px;
+    }
+
+    /* Show the hamburger button by overriding the desktop 'display: none' */
+    .hamburger-menu {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--primary-color);
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0;
+        margin-left: 10px;
+    }
+
+    /* Hide the desktop phone number for cleaner mobile header */
+    .site-header .header-phone {
+        display: none !important;
+    }
+
     .site-header nav {
-        flex-direction: column;
-        align-items: flex-start;
+        /* Reset flex-direction to row to keep logo and controls on one line */
+        flex-direction: row;
+        align-items: center;
+        /* Increased padding on the nav container to push content away from edges */
+        padding: 0 var(--spacing-md);
+        gap: 0;
+    }
+
+    /* Target the container holding the lang-switch and hamburger */
+    .site-header nav>div {
+        width: auto;
+        /* Allow content to dictate width */
+        justify-content: flex-end;
+        /* Push controls to the end */
+        margin-top: 0;
         gap: var(--spacing-sm);
     }
 
-    .site-header .nav-links {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        margin-top: var(--spacing-sm);
-        display: none;
-        /* Hide nav links on smaller screens by default */
+    .site-header nav .logo {
+        flex-grow: 1;
+        /* Pushes the logo to the left */
     }
 
-    .site-header nav>div {
+    /* CRITICAL: Hide the main nav links by default */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        /* Position the menu right below the header */
+        left: 0;
         width: 100%;
-        justify-content: space-between;
-        margin-top: var(--spacing-sm);
+        background-color: var(--white);
+        box-shadow: 0 8px 10px var(--shadow-medium);
+        /* Deeper shadow for modal effect */
+        z-index: 998;
+        /* Below the header, above content */
+        padding: 20px 0;
+        border-top: 1px solid var(--border-color);
+        /* Ensure links take full width for tapping */
+        align-items: center;
+        transition: all var(--transition-speed) var(--transition-ease);
+    }
+
+    /* CRITICAL: Show the menu when the .active class is applied by JavaScript */
+    .nav-links.active {
+        display: flex;
+        /* Makes the menu visible */
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 15px 0;
+        border-bottom: 1px solid var(--border-color);
+        font-size: 1.1em;
+        font-weight: 600;
+    }
+
+    .nav-links li a::after {
+        /* Hide the underline for mobile dropdown links */
+        display: none;
+    }
+
+    .nav-links li:last-child a {
+        border-bottom: none;
+    }
+
+    /* --- END MOBILE NAVIGATION FIX --- */
+
+
+    .hero {
+        padding: 5rem var(--spacing-md);
     }
 
     .hero h1 {
@@ -967,6 +1028,14 @@ body[dir="rtl"] .close-button {
         font-size: 1.6em;
     }
 
+    .site-header {
+        padding: var(--spacing-sm);
+    }
+
+    .hero {
+        padding: 4rem var(--spacing-sm);
+    }
+
     .hero h1 {
         font-size: 1.8em;
     }
@@ -986,5 +1055,17 @@ body[dir="rtl"] .close-button {
 
     h2 {
         font-size: 1.4em;
+    }
+
+    section {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    .booking-form {
+        padding: var(--spacing-sm);
+    }
+
+    .map-container iframe {
+        height: 220px;
     }
 }

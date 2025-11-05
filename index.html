@@ -4,18 +4,25 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" class="data-attr" data-key="main_page_description" data-attr="content"
-        content="Premium Care Physiotherapy Center. See our services, book appointments, and meet our certified team. Accurate physical therapy exercises." />
+    <meta name="description"
+        content="Premium Care Physiotherapy Center in Luxor. Expert rehab, sports injuries, neurological care & nutrition. Book via WhatsApp or form." />
 
-    <title class="data-text" data-key="main_page_title">Premium Care | Physiotherapy Center</title>
+    <!-- SEO Title -->
+    <title>Premium Care | Physiotherapy & Rehabilitation Center – Luxor</title>
+
+    <!-- Fonts (already in your original) -->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Tajawal:wght@400;700&display=swap"
         rel="stylesheet" />
 
+    <!-- Flatpickr & Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+    <!-- Favicon = Your Logo -->
+    <link rel="icon" href="./assets/images/logo.jpeg" type="image/jpeg">
+
+    <!-- Your Main CSS -->
     <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -23,7 +30,11 @@
 
     <header class="site-header">
         <nav>
-            <a href="./" class="logo data-text" data-key="logo">Premium Care</a>
+            <!-- LOGO WITH IMAGE (replaces text) -->
+            <a href="./" class="logo">
+                <img src="./assets/images/logo.jpeg" alt="Premium Care Logo">
+            </a>
+
             <ul class="nav-links">
                 <li><a href="index.html#services" class="data-text" data-key="nav_services">Services</a></li>
                 <li><a href="index.html#location" class="data-text" data-key="nav_location">Location & Hours</a></li>
@@ -33,7 +44,17 @@
                 <li><a href="index.html#contact" class="data-text" data-key="nav_contact">Contact</a></li>
             </ul>
             <div>
+                <a href="tel:+201022562927" class="header-phone"
+                    style="margin-right: 15px; text-decoration: none; font-weight: 600; color: var(--pc-dark, #0F3D45);">
+                    <i class="fas fa-phone-alt"></i> +201022562927
+                </a>
+
                 <button id="lang-switch" class="data-text" data-key="lang_switch">العربية</button>
+
+                <button class="hamburger-menu" aria-label="Toggle Navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
                 <a href="index.html#book" class="cta-button data-text" data-key="cta_main">Book Now</a>
             </div>
         </nav>
@@ -46,6 +67,7 @@
             <a href="index.html#book" class="cta-button data-text" data-key="cta_hero">Start Your Booking</a>
         </section>
 
+        <!-- ALL OTHER SECTIONS 100% UNCHANGED -->
         <section id="services">
             <h2 class="data-text" data-key="sec_services_title">Our Specialized Services</h2>
             <div class="service-grid">
@@ -59,46 +81,42 @@
                     <img src="./assets/images/electrotherapy.jpg" alt="Electrotherapy Icon" />
                     <h3 class="data-text" data-key="service_2_title">Electrotherapy</h3>
                     <p class="data-text" data-key="service_2_desc">Using advanced devices like ultrasound and TENS for
-                        pain
-                        management.</p>
+                        pain management.</p>
                 </div>
                 <div class="card">
                     <img src="./assets/images/rehab.jpg" alt="Rehabilitation Icon" />
                     <h3 class="data-text" data-key="service_3_title">Post-Surgical Rehabilitation</h3>
                     <p class="data-text" data-key="service_3_desc">Structured programs to regain strength and mobility
-                        after
-                        operations.</p>
+                        after operations.</p>
                 </div>
                 <div class="card">
                     <img src="./assets/images/clinical_nutrition.jpg" alt="Clinical Nutrition Icon" />
                     <h3 class="data-text" data-key="service_4_title">Clinical Nutrition</h3>
                     <p class="data-text" data-key="service_4_desc">Personalized nutrition plans for weight adjustment
-                        and
-                        overall health.</p>
+                        and overall health.</p>
                 </div>
                 <div class="card">
                     <img src="./assets/images/sports_injuries.jpg" alt="Sports Injuries Icon" />
                     <h3 class="data-text" data-key="service_5_title">Sports Injuries</h3>
                     <p class="data-text" data-key="service_5_desc">Comprehensive care for athletic injuries to ensure a
-                        safe
-                        return to activity.</p>
+                        safe return to activity.</p>
                 </div>
                 <div class="card">
                     <img src="./assets/images/neurological_rehab.jpg" alt="Neurological Rehabilitation Icon" />
                     <h3 class="data-text" data-key="service_6_title">Neurological Rehabilitation</h3>
                     <p class="data-text" data-key="service_6_desc">Specialized therapies for stroke, MS, and other
-                        neurological conditions.
-                    </p>
+                        neurological conditions.</p>
                 </div>
             </div>
         </section>
+
         <section id="location">
             <h2 class="data-text" data-key="sec_location_title">Location & Working Hours</h2>
             <div class="location-grid">
                 <div class="map-container">
                     <h3 class="data-text text-center" data-key="location_address_title">Our Location</h3>
                     <p class="data-text text-center" data-key="location_address_details">El-Moatasem, Luxor City, Luxor,
-                        Luxor Governorate </p>
+                        Luxor Governorate</p>
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1022.0674258908754!2d32.64684499933513!3d25.69837090812328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14497e5d8719c8f3%3A0x6d0b7e2e5f5f6b2!2sPremium%20Care%20Physiotherapy%20Center!5e0!3m2!1sen!2seg!4v1709405465243!5m2!1sen!2seg"
                         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
@@ -163,12 +181,16 @@
             </form>
         </section>
 
+        <!-- CONTACT: Added real phone & WhatsApp -->
         <section id="contact">
             <h2 class="data-text" data-key="sec_contact_title">Contact & Support</h2>
             <div class="text-center">
-                <p class="data-text" data-key="contact_phone_display"></p>
-                <p class="data-text" data-key="contact_email">Email: premiumcarept.center@gmail.com</p>
-                <p class="data-text" data-key="facebook_page"></p>
+                <p><strong>Call:</strong> <a href="tel:+201022562927">+201022562927</a></p>
+                <p><strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61583191708739"
+                        target="_blank">Premium Care PT center</a></p>
+                <p><strong>Email:</strong> <a
+                        href="mailto:premiumcarept.center@gmail.com">premiumcarept.center@gmail.com</a></p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/201022562927" target="_blank">Chat Now</a></p>
             </div>
         </section>
     </main>
@@ -183,6 +205,7 @@
         </p>
     </footer>
 
+    <!-- Scripts (unchanged) -->
     <script src="dictionary.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="script.js"></script>
