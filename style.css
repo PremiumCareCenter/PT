@@ -198,10 +198,13 @@ ul {
 }
 
 .site-header .logo img {
-    height: 60px;
-    /* Reduced from 120px to a standard header height */
+    height: 80px;
+    /* increase to make it more visible */
     width: auto;
     display: block;
+    max-height: 90px;
+    /* safety limit so it doesn’t overflow header */
+    object-fit: contain;
 }
 
 .site-header .nav-links {
