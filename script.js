@@ -294,5 +294,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    // --- Smooth Section Reveal on Scroll ---
+    const sections = document.querySelectorAll("section, .exercise-card, .team-member, .service-card");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.15 });
+
+    sections.forEach(sec => observer.observe(sec));
 
 }); // End of main DOMContentLoaded event listener
