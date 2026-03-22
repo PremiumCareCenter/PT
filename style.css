@@ -278,29 +278,77 @@ ul { list-style: none; }
   .nav-links {
     position: fixed;
     top: 0; right: 0;
-    width: min(320px, 85vw);
+    width: min(300px, 80vw);
     height: 100vh;
     background: var(--white);
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    padding: calc(var(--nav-h) + 20px) 20px 40px;
+    padding: calc(var(--nav-h) + 24px) 20px 40px;
     z-index: 995;
     transform: translateX(110%);
     transition: transform .35s cubic-bezier(.4,0,.2,1);
     box-shadow: -8px 0 40px rgba(0,0,0,.18);
-    gap: 4px;
+    gap: 2px;
+    overflow-y: auto;
   }
-  [dir="rtl"] .nav-links { right: auto; left: 0; transform: translateX(-110%); }
+  [dir="rtl"] .nav-links {
+    right: auto; left: 0;
+    transform: translateX(-110%);
+    box-shadow: 8px 0 40px rgba(0,0,0,.18);
+  }
   .nav-links.open { transform: translateX(0); }
   [dir="rtl"] .nav-links.open { transform: translateX(0); }
   .nav-links a {
     padding: 13px 16px;
     border-radius: var(--radius-md);
     font-size: 1rem;
+    font-weight: 500;
     color: var(--text);
     border-bottom: 1px solid var(--gray-100);
+    transition: background var(--transition), color var(--transition);
   }
+  .nav-links a:hover,
+  .nav-links a.active-nav { background: var(--off-white); color: var(--navy); }
+  /* Tighten nav-container on mobile */
+  .nav-container {
+    gap: 8px;
+    padding: 0 14px;
+    /* Prevent any child from overflowing the bar */
+    overflow: hidden;
+  }
+  /* Logo shrinks gracefully */
+  .logo-tagline { display: none; }
+  .logo-name { font-size: .95rem; }
+  .nav-logo { gap: 8px; }
+  .nav-logo img { width: 36px; height: 36px; }
+  /* Language button compact */
+  .lang-btn { padding: 5px 10px; font-size: .8rem; flex-shrink: 0; }
+  /* Hide phone number — too wide */
+  .nav-phone { display: none; }
+  /* Hamburger — always visible, clear tap target */
+  .hamburger-btn {
+    display: flex;
+    flex-shrink: 0;
+    min-width: 36px;
+    min-height: 36px;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+    border-radius: var(--radius-sm);
+    background: transparent;
+  }
+  /* nav-actions: keep items in line, no wrapping */
+  .nav-actions { gap: 8px; flex-wrap: nowrap; }
+}
+
+/* Extra-small screens (iPhone SE, 360px wide) */
+@media (max-width: 420px) {
+  .nav-container { padding: 0 10px; gap: 6px; }
+  .logo-name { font-size: .85rem; }
+  .nav-logo img { width: 32px; height: 32px; }
+  .lang-btn { padding: 4px 8px; font-size: .75rem; }
+  .hamburger-btn span { width: 20px; }
 }
 
 /* ═══════════════════════════════════════════
