@@ -17,6 +17,7 @@
   --off-white:  #f8f9fb;
   --gray-50:    #f0f4f8;
   --gray-100:   #e2e8f0;
+  --gray-200:   #cbd5e1;
   --gray-300:   #94a3b8;
   --gray-500:   #64748b;
   --gray-700:   #334155;
@@ -975,32 +976,35 @@ ul { list-style: none; }
   padding: 18px 12px;
   border: 2px solid var(--gray-200);
   border-radius: var(--radius-md);
-  background: var(--surface);
-  color: var(--text-secondary);
+  background: var(--off-white);
+  color: var(--gray-700);
   font-size: 0.95rem;
   font-weight: 600;
-  font-family: var(--font-body);
+  font-family: var(--font-sans);
   cursor: pointer;
   transition: border-color 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
 }
-.category-btn i {
-  font-size: 1.5rem;
-  transition: color 0.2s;
-}
-.category-btn:hover {
-  border-color: var(--navy);
-  color: var(--navy);
-}
+.category-btn i { font-size: 1.5rem; transition: color 0.2s; }
+.category-btn:hover { border-color: var(--navy); color: var(--navy); }
 .category-btn.selected {
   border-color: var(--navy);
   background: var(--navy);
   color: #fff;
   box-shadow: 0 4px 16px rgba(1,60,109,0.18);
 }
-/* complaint field fade-in */
-#complaintGroup {
-  animation: fadeSlideDown 0.28s ease;
+/* Static label — overrides .form-group label absolute positioning */
+.form-label-static {
+  position: static !important;
+  transform: none !important;
+  display: block;
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: 8px;
+  pointer-events: auto;
 }
+/* complaint field fade-in — only plays on show (display:none blocks animation on load) */
+#complaintGroup { animation: fadeSlideDown 0.28s ease; }
 @keyframes fadeSlideDown {
   from { opacity: 0; transform: translateY(-8px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -1286,6 +1290,7 @@ ul { list-style: none; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.1); }
   .stat-item:nth-child(2n) { border-right: none; }
+  .stat-item:last-child { border-bottom: none; }
   .team-grid { grid-template-columns: 1fr; }
   .team-card { flex-direction: column; }
   .team-photo-wrap { width: 100%; height: 220px; }

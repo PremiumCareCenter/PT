@@ -14,8 +14,8 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Premium Care PT Center — Luxor" />
   <meta property="og:description" content="Upper Egypt's premier physiotherapy & rehabilitation center. Expert care, evening appointments, bilingual service." />
-  <meta property="og:image" content="./assets/images/ogclinic.jpg" />
-  <meta property="og:url" content="https://premiumcarecenter.github.io" />
+  <meta property="og:image" content="https://premiumcarecenter.github.io/PT/assets/images/ogclinic.jpg" />
+  <meta property="og:url" content="https://premiumcarecenter.github.io/PT/" />
   <meta property="og:type" content="website" />
 
   <!-- JSON-LD -->
@@ -32,7 +32,7 @@
       "addressLocality": "Luxor",
       "addressCountry": "EG"
     },
-    "openingHours": ["Sa-Fr 17:00-22:00"],
+    "openingHours": ["Mo-Fr 17:00-22:00", "Sa 17:00-22:00"],
     "medicalSpecialty": "PhysicalTherapy"
   }
   </script>
@@ -503,7 +503,7 @@
               </div>
               <div class="booking-trust-item">
                 <i class="fas fa-shield-alt"></i>
-                <span>Your data is private</span>
+                <span class="data-text" data-key="form_data_private">Your data is private</span>
               </div>
             </div>
           </div>
@@ -534,7 +534,7 @@
             </div>
             <!-- Category selector: two big toggle buttons -->
             <div class="form-group form-group-full">
-              <label class="data-text" data-key="form_category_label" style="display:block;margin-bottom:0.5rem;font-weight:600;color:var(--text-secondary);">Select a Category</label>
+              <label class="data-text form-label-static" data-key="form_category_label">What are you booking for?</label>
               <div class="category-toggle" id="categoryToggle">
                 <button type="button" class="category-btn" data-value="Physiotherapy" data-key-label="form_cat_pt" id="catPT">
                   <i class="fas fa-person-walking-with-cane"></i>
@@ -549,7 +549,7 @@
             </div>
             <!-- Complaint field — shown only when Physiotherapy is selected -->
             <div class="form-group form-group-full" id="complaintGroup" style="display:none;">
-              <label for="condition"><i class="fas fa-notes-medical"></i> <span class="data-text" data-key="form_cond_label">Main Complaint</span></label>
+              <label for="condition" class="form-label-static"><i class="fas fa-notes-medical"></i> <span class="data-text" data-key="form_cond_label">Main Complaint</span></label>
               <textarea id="condition" name="condition" class="data-attr" data-key="form_cond_placeholder" placeholder="Briefly describe your main complaint (e.g. lower back pain for 3 weeks, pain after knee surgery…)" rows="3"></textarea>
             </div>
             <button type="submit" class="btn btn-primary btn-block">
@@ -636,7 +636,7 @@
             <li><i class="fas fa-map-marker-alt"></i><span class="data-text" data-key="footer_location_text">El-Moatasem, Luxor City</span></li>
             <li><i class="fas fa-phone-alt"></i><a href="tel:+201022562927" rel="noopener">+20 10 22562927</a></li>
             <li><i class="fas fa-envelope"></i><a href="mailto:premiumcarept.center@gmail.com" rel="noopener">premiumcarept.center@gmail.com</a></li>
-            <li><i class="fas fa-clock"></i><span>Sat–Fri: 5:00 PM – 10:00 PM</span></li>
+            <li><i class="fas fa-clock"></i><span class="data-text" data-key="footer_hours_text">Sat–Fri: 5:00 PM – 10:00 PM (Sun Closed)</span></li>
           </ul>
         </div>
 

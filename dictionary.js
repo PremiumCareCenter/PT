@@ -20,6 +20,8 @@ const dictionary = {
         'footer_location_text': 'El-Moatasem, Luxor City, Luxor Governorate',
         'whatsapp_tooltip': 'Chat with us',
         'response_badge': 'Response within 2 hours',
+        'form_data_private': 'Your data is private',
+        'footer_hours_text': 'Sat–Fri: 5:00 PM – 10:00 PM (Sun Closed)',
 
         // ─── SEO ───
         'main_page_description': 'Premium Care Physiotherapy and Rehabilitation Center in Luxor. Expert manual therapy, electrotherapy, sports injuries, neurological rehab & clinical nutrition. Book via WhatsApp.',
@@ -103,19 +105,18 @@ const dictionary = {
         // ─── Testimonials ───
         'sec_testimonials_title': 'What Our Patients Say',
         'sec_testimonials_subtitle': 'Real patients, real recoveries — in their own words.',
-        // ⚠️ REPLACE THESE WITH REAL PATIENT TESTIMONIALS BEFORE LAUNCH
-        'testimonial_1_text': 'I came to Premium Care after my knee surgery with very limited movement. After 8 weeks with Dr. Christen, I was back to walking normally. The personalized attention and evening hours made all the difference.',
-        'testimonial_1_name': 'Ahmed M.',
-        'testimonial_1_condition': 'Post-Knee Replacement Rehab',
-        'testimonial_2_text': 'Dr. Abanoub diagnosed my back problem correctly when two other clinics couldn\'t. His knowledge of spinal injuries is exceptional. I was pain-free within a month.',
-        'testimonial_2_name': 'Nour S.',
-        'testimonial_2_condition': 'Chronic Lower Back Pain',
-        'testimonial_3_text': 'As a football player, I needed my ankle injury treated properly. The sports rehabilitation here is professional, progressive, and effective. I returned to the field faster than expected.',
-        'testimonial_3_name': 'Omar K.',
-        'testimonial_3_condition': 'Sports Ankle Injury',
-        'testimonial_4_text': 'My mother had a stroke and the neurological rehabilitation program gave her back her independence. The therapists are patient, knowledgeable, and truly caring.',
-        'testimonial_4_name': 'Maryam T.',
-        'testimonial_4_condition': 'Stroke Rehabilitation',
+        'testimonial_1_text': 'Dr. Abanoub and Dr. Christen are very skilled and know their work well. Modern equipment, and honestly with every session I felt better than the one before. May God always grant them success.',
+        'testimonial_1_name': 'Maryam W.',
+        'testimonial_1_condition': 'Frozen Shoulder Rehabilitation',
+        'testimonial_2_text': 'Dr. Abanoub is skilled and knows his work very well — and a very comfortable person to deal with 🤍 Wishing you success always.',
+        'testimonial_2_name': 'Mina M.',
+        'testimonial_2_condition': 'Chronic Back & Neck Pain',
+        'testimonial_3_text': 'Truly an exceptional medical team — highly skilled, above excellent, precise in their work, and with outstanding manner. Wishing them continued success.',
+        'testimonial_3_name': 'Fawzi A.',
+        'testimonial_3_condition': 'Hand Tendon Rehabilitation',
+        'testimonial_4_text': 'Punctual appointments, a very refined manner, and the doctor\'s humility created the perfect atmosphere for treatment. Noticeable improvement from the third session. Thank you.',
+        'testimonial_4_name': 'Victor Y.',
+        'testimonial_4_condition': 'Post Bilateral Knee Replacement Rehab',
 
         // ─── Gallery ───
         'sec_gallery_title': 'Inside Premium Care',
@@ -224,6 +225,8 @@ const dictionary = {
         'footer_location_text': 'المعتصم، مدينة الأقصر، محافظة الأقصر',
         'whatsapp_tooltip': 'راسلنا الآن',
         'response_badge': 'رد خلال ساعتين',
+        'form_data_private': 'بياناتك في أمان',
+        'footer_hours_text': 'السبت–الجمعة: 5:00 م – 10:00 م (الأحد مغلق)',
 
         // ─── SEO ───
         'main_page_description': 'مركز بريميوم كير للعلاج الطبيعي وإعادة التأهيل في الأقصر. علاج يدوي، كهربائي، رياضي، عصبي، وتغذية علاجية. احجز عبر واتساب.',

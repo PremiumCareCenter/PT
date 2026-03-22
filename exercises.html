@@ -11,7 +11,8 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Physiotherapy Exercise Library — Premium Care PT Center" />
   <meta property="og:description" content="Evidence-based physiotherapy exercises explained clearly. By Premium Care PT Center, Luxor." />
-  <meta property="og:url" content="https://premiumcarecenter.github.io/exercises.html" />
+  <meta property="og:image" content="https://premiumcarecenter.github.io/PT/assets/images/ogclinic.jpg" />
+  <meta property="og:url" content="https://premiumcarecenter.github.io/PT/exercises.html" />
   <meta property="og:type" content="website" />
 
   <!-- Fonts -->
@@ -49,7 +50,7 @@
         <li><a href="index.html#team" class="data-text" data-key="nav_team">Our Team</a></li>
         <li><a href="index.html#testimonials" class="data-text" data-key="nav_testimonials">Reviews</a></li>
         <li><a href="index.html#location" class="data-text" data-key="nav_location">Location</a></li>
-        <li><a href="exercises.html" class="data-text" data-key="nav_exercises">Exercises</a></li>
+        <li><a href="exercises.html" class="data-text active-nav" data-key="nav_exercises">Exercises</a></li>
         <li><a href="index.html#contact" class="data-text" data-key="nav_contact">Contact</a></li>
       </ul>
 
@@ -71,6 +72,7 @@
   <div class="nav-overlay" id="nav-overlay"></div>
 
   <!-- ══════════════════════════════════════ PAGE HERO ══════════════════════════════════════ -->
+  <main>
   <div class="exercises-hero">
     <div class="container">
       <h1 class="data-text" data-key="sec_exercises_title">Physiotherapy Exercise Library</h1>
@@ -129,6 +131,7 @@
       </div>
     </div>
   </section>
+  </main>
 
   <!-- Exercise Modal -->
   <!-- FIX: no duplicate id — exercises-body (body) vs exercises-section (section) -->
@@ -171,7 +174,7 @@
           <ul class="footer-contact-list">
             <li><i class="fas fa-map-marker-alt"></i><span class="data-text" data-key="footer_location_text">El-Moatasem, Luxor City</span></li>
             <li><i class="fas fa-phone-alt"></i><a href="tel:+201022562927" rel="noopener">+20 10 22562927</a></li>
-            <li><i class="fas fa-clock"></i><span>Sat–Fri: 5:00 PM – 10:00 PM</span></li>
+            <li><i class="fas fa-clock"></i><span class="data-text" data-key="footer_hours_text">Sat–Fri: 5:00 PM – 10:00 PM (Sun Closed)</span></li>
           </ul>
         </div>
       </div>
@@ -187,7 +190,7 @@
   </footer>
 
   <!-- Floating WhatsApp -->
-  <a href="https://wa.me/201022562927" class="whatsapp-float"
+  <a href="https://wa.me/201022562927" class="whatsapp-float" id="whatsapp-float"
      target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
     <div class="whatsapp-pulse"></div>
     <i class="fab fa-whatsapp"></i>

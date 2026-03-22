@@ -455,4 +455,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Exercises page modal
     initExerciseModal();
+
+    // Auto-update copyright year dynamically
+    const currentYear = new Date().getFullYear();
+    document.querySelectorAll('[data-key="footer_copy"]').forEach(el => {
+        el.innerHTML = el.innerHTML.replace(/\d{4}/, currentYear);
+    });
+
+    // On exercises page: suppress scroll-spy overriding active-nav set in HTML
+    if (document.body.id === 'exercises-body') {
+        document.querySelectorAll('.nav-links a').forEach(a => {
+            a.classList.remove('active-nav');
+        });
+        const exercisesLink = document.querySelector('.nav-links a[href="exercises.html"]');
+        if (exercisesLink) exercisesLink.classList.add('active-nav');
+    }
 });
