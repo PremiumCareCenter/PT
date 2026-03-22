@@ -302,38 +302,69 @@ function initBookingForm() {
         dateInput.min = new Date().toISOString().split('T')[0];
     }
 
+    // ── Category toggle logic ──
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    const serviceInput  = document.getElementById('bookingService');
+    const complaintGroup = document.getElementById('complaintGroup');
+    const conditionField = document.getElementById('condition');
+
+    categoryBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            categoryBtns.forEach(b => b.classList.remove('selected'));
+            this.classList.add('selected');
+            serviceInput.value = this.dataset.value;
+
+            const isPT = this.dataset.value === 'Physiotherapy';
+            complaintGroup.style.display = isPT ? '' : 'none';
+            if (!isPT && conditionField) conditionField.value = '';
+        });
+    });
+
     form.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        const name = document.getElementById('name')?.value?.trim();
-        const phone = document.getElementById('phone')?.value?.trim();
-        const date = document.getElementById('bookingDate')?.value;
-        const condition = document.getElementById('condition')?.value?.trim();
-        const service = document.getElementById('bookingService')?.value;
-        const time = document.getElementById('bookingTime')?.value;
+        const name    = document.getElementById('name')?.value?.trim();
+        const phone   = document.getElementById('phone')?.value?.trim();
+        const date    = document.getElementById('bookingDate')?.value;
+        const service = serviceInput?.value;
+        const time    = document.getElementById('bookingTime')?.value;
+        const condition = conditionField?.value?.trim();
 
-        if (!name || !phone || !date || !condition) {
+        const isPT = service === 'Physiotherapy';
+
+        if (!name || !phone || !date || !service) {
             alert(dictionary[currentLang]?.book_fill_all || 'Please fill in all required fields.');
+            return;
+        }
+        if (isPT && !condition) {
+            alert(dictionary[currentLang]?.book_fill_complaint || 'Please briefly describe your main complaint so the doctor can prepare.');
             return;
         }
 
         const whatsappNumber = '201022562927';
-        const serviceText = service ? `\nالخدمة / Service: ${service}` : '';
-        const timeText = time ? `\nالوقت المفضل / Preferred time: ${time}` : '';
+        const timeText      = time      ? `\nالوقت المفضل / Preferred time: ${time}` : '';
+        const complaintText = (isPT && condition) ? `\n📝 الشكوى الرئيسية / Main Complaint: ${condition}` : '';
+
+        const serviceAR = isPT
+            ? 'علاج طبيعي / Physiotherapy'
+            : 'تغذية علاجية / Nutrition';
 
         const message =
 `🏥 *Premium Care PT Center — طلب حجز / Booking Request*
 
 👤 الاسم / Name: ${name}
 📞 الهاتف / Phone: ${phone}
-📅 التاريخ / Date: ${date}${serviceText}${timeText}
-📝 الحالة / Condition: ${condition}`;
+📅 التاريخ / Date: ${date}
+🏷️ الخدمة / Service: ${serviceAR}${timeText}${complaintText}`;
 
         const link = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
         window.open(link, '_blank', 'noopener,noreferrer');
 
         alert(dictionary[currentLang]?.book_whatsapp_confirm || 'Opening WhatsApp. Please press Send.');
         form.reset();
+        categoryBtns.forEach(b => b.classList.remove('selected'));
+        serviceInput.value = '';
+        complaintGroup.style.display = 'none';
     });
 }
 

@@ -961,6 +961,51 @@ ul { list-style: none; }
   box-shadow: 0 0 0 3px rgba(1,60,109,.08);
 }
 .form-group textarea { padding-top: 14px; resize: vertical; min-height: 90px; }
+/* ── Category Toggle ── */
+.category-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.category-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 12px;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.category-btn i {
+  font-size: 1.5rem;
+  transition: color 0.2s;
+}
+.category-btn:hover {
+  border-color: var(--navy);
+  color: var(--navy);
+}
+.category-btn.selected {
+  border-color: var(--navy);
+  background: var(--navy);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(1,60,109,0.18);
+}
+/* complaint field fade-in */
+#complaintGroup {
+  animation: fadeSlideDown 0.28s ease;
+}
+@keyframes fadeSlideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 .form-or-call { text-align: center; color: var(--gray-500); font-size: .88rem; margin-top: 4px; }
 .form-or-call a { color: var(--navy); font-weight: 600; }
 .form-or-call a:hover { text-decoration: underline; }

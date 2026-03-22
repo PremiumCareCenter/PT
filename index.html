@@ -524,30 +524,33 @@
                 <input type="date" id="bookingDate" name="bookingDate" required />
               </div>
               <div class="form-group">
-                <label for="bookingService"><i class="fas fa-stethoscope"></i></label>
-                <select id="bookingService" name="bookingService">
-                  <option value="" class="data-text" data-key="form_service_placeholder">Select a Service</option>
-                  <option class="data-text" data-key="form_service_1">Manual Therapy</option>
-                  <option class="data-text" data-key="form_service_2">Electrotherapy</option>
-                  <option class="data-text" data-key="form_service_3">Post-Surgical Rehabilitation</option>
-                  <option class="data-text" data-key="form_service_4">Clinical Nutrition</option>
-                  <option class="data-text" data-key="form_service_5">Sports Injuries</option>
-                  <option class="data-text" data-key="form_service_6">Neurological Rehabilitation</option>
-                  <option class="data-text" data-key="form_service_7">General Assessment</option>
+                <label for="bookingTime"><i class="fas fa-clock"></i></label>
+                <select id="bookingTime" name="bookingTime">
+                  <option value="" class="data-text" data-key="form_time_placeholder">Preferred Time Slot</option>
+                  <option class="data-text" data-key="form_time_1">Early Evening (5:00–7:00 PM)</option>
+                  <option class="data-text" data-key="form_time_2">Late Evening (7:00–10:00 PM)</option>
                 </select>
               </div>
             </div>
+            <!-- Category selector: two big toggle buttons -->
             <div class="form-group form-group-full">
-              <label for="bookingTime"><i class="fas fa-clock"></i></label>
-              <select id="bookingTime" name="bookingTime">
-                <option value="" class="data-text" data-key="form_time_placeholder">Preferred Time Slot</option>
-                <option class="data-text" data-key="form_time_1">Early Evening (5:00–7:00 PM)</option>
-                <option class="data-text" data-key="form_time_2">Late Evening (7:00–10:00 PM)</option>
-              </select>
+              <label class="data-text" data-key="form_category_label" style="display:block;margin-bottom:0.5rem;font-weight:600;color:var(--text-secondary);">Select a Category</label>
+              <div class="category-toggle" id="categoryToggle">
+                <button type="button" class="category-btn" data-value="Physiotherapy" data-key-label="form_cat_pt" id="catPT">
+                  <i class="fas fa-person-walking-with-cane"></i>
+                  <span class="data-text" data-key="form_cat_pt">Physiotherapy</span>
+                </button>
+                <button type="button" class="category-btn" data-value="Nutrition" data-key-label="form_cat_nutrition" id="catNutrition">
+                  <i class="fas fa-apple-whole"></i>
+                  <span class="data-text" data-key="form_cat_nutrition">Nutrition</span>
+                </button>
+              </div>
+              <input type="hidden" id="bookingService" name="bookingService" />
             </div>
-            <div class="form-group form-group-full">
-              <label for="condition"><i class="fas fa-notes-medical"></i></label>
-              <textarea id="condition" name="condition" class="data-attr" data-key="form_cond_placeholder" placeholder="Briefly describe your condition or concern" rows="3" required></textarea>
+            <!-- Complaint field — shown only when Physiotherapy is selected -->
+            <div class="form-group form-group-full" id="complaintGroup" style="display:none;">
+              <label for="condition"><i class="fas fa-notes-medical"></i> <span class="data-text" data-key="form_cond_label">Main Complaint</span></label>
+              <textarea id="condition" name="condition" class="data-attr" data-key="form_cond_placeholder" placeholder="Briefly describe your main complaint (e.g. lower back pain for 3 weeks, pain after knee surgery…)" rows="3"></textarea>
             </div>
             <button type="submit" class="btn btn-primary btn-block">
               <i class="fab fa-whatsapp"></i>
