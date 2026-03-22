@@ -963,6 +963,13 @@ ul { list-style: none; }
 }
 .form-group textarea { padding-top: 14px; resize: vertical; min-height: 90px; }
 /* ── Category Toggle ── */
+.category-section { display: flex; flex-direction: column; gap: 10px; }
+.category-heading {
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  margin: 0;
+}
 .category-toggle {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -992,18 +999,35 @@ ul { list-style: none; }
   color: #fff;
   box-shadow: 0 4px 16px rgba(1,60,109,0.18);
 }
-/* Static label — overrides .form-group label absolute positioning */
+/* Static label — for complaint field outside .form-group */
 .form-label-static {
-  position: static !important;
-  transform: none !important;
   display: block;
   font-size: .85rem;
   font-weight: 600;
   color: var(--gray-700);
-  margin-bottom: 8px;
-  pointer-events: auto;
+  margin-bottom: 6px;
 }
-/* complaint field fade-in — only plays on show (display:none blocks animation on load) */
+/* Standalone textarea (outside .form-group, no icon offset needed) */
+#complaintGroup textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1.5px solid var(--gray-100);
+  border-radius: var(--radius-md);
+  font-size: .92rem;
+  font-family: var(--font-sans);
+  color: var(--text);
+  background: var(--off-white);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  resize: vertical;
+  min-height: 90px;
+}
+#complaintGroup textarea:focus {
+  outline: none;
+  border-color: var(--navy);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(1,60,109,.08);
+}
+/* complaint field fade-in */
 #complaintGroup { animation: fadeSlideDown 0.28s ease; }
 @keyframes fadeSlideDown {
   from { opacity: 0; transform: translateY(-8px); }
