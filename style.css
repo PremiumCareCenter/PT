@@ -282,55 +282,60 @@ ul { list-style: none; }
   .nav-links {
     position: fixed;
     top: 0; right: 0;
-    width: min(300px, 80vw);
+    width: min(280px, 78vw);
     height: 100vh;
     background: var(--white);
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    padding: calc(var(--nav-h) + 24px) 20px 40px;
+    padding: calc(var(--nav-h) + 32px) 16px 40px;
     z-index: 995;
     transform: translateX(110%);
     transition: transform .35s cubic-bezier(.4,0,.2,1);
-    box-shadow: -8px 0 40px rgba(0,0,0,.18);
-    gap: 2px;
+    box-shadow: -8px 0 40px rgba(0,0,0,.2);
+    gap: 4px;
     overflow-y: auto;
+    /* Must NOT be inside a parent with overflow:hidden — now at body level */
   }
   [dir="rtl"] .nav-links {
     right: auto; left: 0;
     transform: translateX(-110%);
-    box-shadow: 8px 0 40px rgba(0,0,0,.18);
+    box-shadow: 8px 0 40px rgba(0,0,0,.2);
   }
   .nav-links.open { transform: translateX(0); }
   [dir="rtl"] .nav-links.open { transform: translateX(0); }
   .nav-links a {
-    padding: 13px 16px;
+    display: block;
+    padding: 15px 18px;
     border-radius: var(--radius-md);
     font-size: 1rem;
     font-weight: 500;
     color: var(--text);
     border-bottom: 1px solid var(--gray-100);
     transition: background var(--transition), color var(--transition);
+    line-height: 1.3;
   }
+  .nav-links li:last-child a { border-bottom: none; }
   .nav-links a:hover,
-  .nav-links a.active-nav { background: var(--off-white); color: var(--navy); }
-  /* Tighten nav-container on mobile */
-  .nav-container {
-    gap: 8px;
-    padding: 0 14px;
-    /* Prevent any child from overflowing the bar */
-    overflow: hidden;
+  .nav-links a.active-nav {
+    background: var(--off-white);
+    color: var(--navy);
+    padding-left: 22px;
   }
-  /* Logo shrinks gracefully */
+  [dir="rtl"] .nav-links a:hover,
+  [dir="rtl"] .nav-links a.active-nav { padding-left: 18px; padding-right: 22px; }
+  /* Nav container — no overflow hidden, just tight spacing */
+  .nav-container { gap: 8px; padding: 0 14px; }
+  /* Logo */
   .logo-tagline { display: none; }
   .logo-name { font-size: .95rem; }
   .nav-logo { gap: 8px; }
   .nav-logo img { width: 36px; height: 36px; }
-  /* Language button compact */
+  /* Lang button */
   .lang-btn { padding: 5px 10px; font-size: .8rem; flex-shrink: 0; }
-  /* Hide phone number — too wide */
+  /* Hide phone */
   .nav-phone { display: none; }
-  /* Hamburger — always visible, clear tap target */
+  /* Hamburger */
   .hamburger-btn {
     display: flex;
     flex-shrink: 0;
@@ -340,13 +345,11 @@ ul { list-style: none; }
     justify-content: center;
     padding: 7px;
     border-radius: var(--radius-sm);
-    background: transparent;
   }
-  /* nav-actions: keep items in line, no wrapping */
   .nav-actions { gap: 8px; flex-wrap: nowrap; }
 }
 
-/* Extra-small screens (iPhone SE, 360px wide) */
+/* Extra-small screens */
 @media (max-width: 420px) {
   .nav-container { padding: 0 10px; gap: 6px; }
   .logo-name { font-size: .85rem; }
@@ -598,6 +601,11 @@ ul { list-style: none; }
   color: var(--gold);
   line-height: 1;
   margin-bottom: 8px;
+}
+/* Stars stat — smaller font so they fit */
+.stat-item:last-child .stat-value .count-number {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  letter-spacing: 3px;
 }
 .stat-label {
   font-size: .88rem;

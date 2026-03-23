@@ -57,8 +57,8 @@ const dictionary = {
         'about_badge_1': 'University-Certified Therapists',
         'about_badge_2': 'Arabic & English Sessions',
         'about_badge_3': 'Evening Clinic — Every Day',
-        'about_card_1_title': '500+ Patients Recovered',
-        'about_card_1_sub': 'and counting — in Luxor & Upper Egypt',
+        'about_card_1_title': '5+ Years Clinical Experience',
+        'about_card_1_sub': 'as certified physiotherapists in Upper Egypt',
         'about_card_2_title': '5★ Patient Rating',
         'about_card_2_sub': 'consistently praised for precision & care',
         'about_card_3_title': '5+ Years of Excellence',
@@ -67,13 +67,13 @@ const dictionary = {
 
         // ─── Stats Bar ───
         'stat_1_value': '500+',
-        'stat_1_label': 'Patients Treated',
+        'stat_1_label': 'Years of Experience',
         'stat_2_value': '2',
-        'stat_2_label': 'Expert Therapists',
+        'stat_2_label': 'Certified Therapists',
         'stat_3_value': '6',
         'stat_3_label': 'Specialized Services',
         'stat_4_value': '5+',
-        'stat_4_label': 'Years of Excellence',
+        'stat_4_label': 'Patient Rating',
 
         // ─── Services ───
         'sec_services_title': 'Our Specialized Services',
@@ -290,8 +290,8 @@ const dictionary = {
         'about_badge_1': 'معالجون معتمدون جامعياً',
         'about_badge_2': 'جلسات بالعربية والإنجليزية',
         'about_badge_3': 'عيادة مسائية — كل يوم',
-        'about_card_1_title': '+500 مريض تعافى',
-        'about_card_1_sub': 'والعدد في ازدياد — في الأقصر وصعيد مصر',
+        'about_card_1_title': '+5 سنوات من الخبرة السريرية',
+        'about_card_1_sub': 'كمعالجين فيزيائيين معتمدين في صعيد مصر',
         'about_card_2_title': 'تقييم 5 نجوم',
         'about_card_2_sub': 'يُشاد به باستمرار للدقة والرعاية',
         'about_card_3_title': '+5 سنوات من التميز',
@@ -299,14 +299,14 @@ const dictionary = {
 
 
         // ─── Stats Bar ───
-        'stat_1_value': '+500',
-        'stat_1_label': 'مريض تم علاجه',
+        'stat_1_value': '+5',
+        'stat_1_label': 'سنوات من الخبرة',
         'stat_2_value': '2',
-        'stat_2_label': 'معالج متخصص',
+        'stat_2_label': 'معالج معتمد',
         'stat_3_value': '6',
         'stat_3_label': 'خدمات متخصصة',
         'stat_4_value': '+5',
-        'stat_4_label': 'سنوات من التميز',
+        'stat_4_label': 'تقييم المرضى',
 
         // ─── Services ───
         'sec_services_title': 'خدماتنا المتخصصة',

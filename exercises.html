@@ -33,7 +33,7 @@
 <!-- FIX: exercises page has its own unique body id (no conflict with exercises-section id) -->
 <body id="exercises-body">
 
-  <!-- ══════════════════════════════════════ NAVBAR (identical to index.html — FIX: hamburger present) ══════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════ NAVBAR ══════════════════════════════════════ -->
   <header class="site-header scrolled" id="site-header">
     <nav class="nav-container">
       <a href="index.html" class="nav-logo">
@@ -43,29 +43,26 @@
           <span class="logo-tagline data-text" data-key="logo_tagline">Physiotherapy &amp; Rehabilitation</span>
         </div>
       </a>
-
-      <!-- FIX: nav-links has correct id, no duplicate -->
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html#services" class="data-text" data-key="nav_services">Services</a></li>
-        <li><a href="index.html#about" class="data-text" data-key="nav_about">About</a></li>
-        <li><a href="index.html#team" class="data-text" data-key="nav_team">Team</a></li>
-        <li><a href="index.html#testimonials" class="data-text" data-key="nav_testimonials">Reviews</a></li>
-        <li><a href="index.html#faq" class="data-text" data-key="nav_faq">FAQ</a></li>
-        <li><a href="index.html#location" class="data-text" data-key="nav_location">Location</a></li>
-        <li><a href="exercises.html" class="data-text active-nav" data-key="nav_exercises">Exercises</a></li>
-        <li><a href="index.html#contact" class="data-text" data-key="nav_contact">Contact</a></li>
-      </ul>
-
       <div class="nav-actions">
         <button id="lang-switch" class="lang-btn data-text" data-key="lang_switch">العربية</button>
         <a href="index.html#book" class="btn btn-primary nav-cta data-text" data-key="cta_main">Book Now</a>
-        <!-- FIX: hamburger is now present on exercises.html -->
         <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
     </nav>
   </header>
+
+  <!-- Nav links outside header for correct mobile fixed positioning -->
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html#services" class="data-text" data-key="nav_services">Services</a></li>
+    <li><a href="index.html#about" class="data-text" data-key="nav_about">About</a></li>
+    <li><a href="index.html#team" class="data-text" data-key="nav_team">Team</a></li>
+    <li><a href="index.html#testimonials" class="data-text" data-key="nav_testimonials">Reviews</a></li>
+    <li><a href="index.html#faq" class="data-text" data-key="nav_faq">FAQ</a></li>
+    <li><a href="index.html#location" class="data-text" data-key="nav_location">Location</a></li>
+    <li><a href="exercises.html" class="data-text active-nav" data-key="nav_exercises">Exercises</a></li>
+  </ul>
 
   <div class="nav-overlay" id="nav-overlay"></div>
 
