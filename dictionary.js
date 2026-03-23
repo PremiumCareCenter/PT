@@ -123,14 +123,19 @@ const dictionary = {
         'testimonial_4_condition': 'Post Bilateral Knee Replacement Rehab',
 
         // ─── Gallery ───
-        'sec_gallery_title': 'Inside Premium Care',
-        'sec_gallery_subtitle': 'A modern, fully equipped clinic designed for your recovery.',
-        'gallery_1_caption': 'Treatment & Rehabilitation',
-        'gallery_2_caption': 'Electrotherapy Equipment',
-        'gallery_3_caption': 'Hands-On Manual Therapy',
-        'gallery_4_caption': 'Exercise & Recovery',
-        'gallery_5_caption': 'First Visit Assessment',
-        'gallery_6_caption': 'Our Team at Work',
+        // ─── FAQ ───
+        'sec_faq_title': 'Common Questions',
+        'sec_faq_subtitle': 'Everything you need to know before your first visit.',
+        'faq_1_q': 'How many sessions will I need before I feel better?',
+        'faq_1_a': 'Most patients need between 6 and 12 sessions, but this genuinely varies from person to person. It depends on your condition, how long you\'ve had it, and how your body responds to treatment. What we can tell you is that most patients notice a real difference within the first few sessions — and after your initial assessment, your therapist will give you a clearer, more personalised estimate.',
+        'faq_2_q': 'Does physiotherapy hurt? What actually happens during a session?',
+        'faq_2_a': 'Not at all. At Premium Care, we do not follow the "no pain, no gain" approach — our focus is the opposite. We work to reduce your pain from the very first session, using gentle, evidence-based techniques that work with your body, not against it. You should leave each session feeling better than when you arrived, not worse.',
+        'faq_3_q': 'Do I need a doctor\'s referral or medical report to book?',
+        'faq_3_a': 'No referral needed. You can book directly and come as you are. Your first visit is a full clinical assessment where your therapist will evaluate your condition, understand your history, and build your treatment plan from scratch. If you have any previous scans or reports, bring them along — but they are not required to get started.',
+        'faq_4_q': 'What is the difference between physiotherapy and the nutrition service?',
+        'faq_4_a': 'Physiotherapy focuses on biomechanical problems — pain, movement restrictions, injuries, post-surgical recovery, and neurological conditions such as back pain, neck pain, joint problems, and stroke rehabilitation. Clinical nutrition is a separate service focused on organising your diet, helping you reach your optimal body weight, and building healthy long-term habits. Some patients benefit from both — your therapist can advise you on what makes sense for your situation.',
+        'faq_5_q': 'I\'ve been living with my condition for years. Can physiotherapy still help me?',
+        'faq_5_a': 'Absolutely. In fact, the majority of patients we treat have chronic conditions — problems that have been present for months or even years. Conditions like osteoarthritis, chronic back and neck pain, and long-standing neurological issues respond very well to the right physiotherapy approach. It is never too late to start. Many of our patients had tried other treatments before and finally found real relief here.',
 
         // ─── Location ───
         'sec_location_title': 'Visit Us',
@@ -333,14 +338,19 @@ const dictionary = {
         'testimonial_4_condition': 'إعادة تأهيل ما بعد استبدال مفصل ركبة في كلا الرجلين',
 
         // ─── Gallery ───
-        'sec_gallery_title': 'داخل بريميوم كير',
-        'sec_gallery_subtitle': 'عيادة حديثة مجهزة بالكامل مصممة من أجل تعافيك.',
-        'gallery_1_caption': 'العلاج وإعادة التأهيل',
-        'gallery_2_caption': 'أجهزة العلاج الكهربائي',
-        'gallery_3_caption': 'العلاج اليدوي المتخصص',
-        'gallery_4_caption': 'التمارين والتعافي',
-        'gallery_5_caption': 'تقييم الزيارة الأولى',
-        'gallery_6_caption': 'فريقنا في العمل',
+        // ─── FAQ ───
+        'sec_faq_title': 'أسئلة شائعة',
+        'sec_faq_subtitle': 'كل ما تحتاج معرفته قبل زيارتك الأولى.',
+        'faq_1_q': 'كم عدد الجلسات التي سأحتاجها قبل أن أتحسن؟',
+        'faq_1_a': 'يحتاج معظم المرضى ما بين 6 و12 جلسة، لكن هذا يختلف حقاً من شخص لآخر. يعتمد الأمر على حالتك، وكم من الوقت عانيت منها، وكيف يستجيب جسمك للعلاج. ما يمكننا قوله هو أن معظم المرضى يلاحظون فارقاً حقيقياً خلال الجلسات الأولى — وبعد التقييم الأولي، سيعطيك معالجك تقديراً أكثر دقة وتخصيصاً.',
+        'faq_2_q': 'هل العلاج الطبيعي مؤلم؟ ماذا يحدث فعلاً خلال الجلسة؟',
+        'faq_2_a': 'لا إطلاقاً. في بريميوم كير، نحن لا نتبع مبدأ "لا ألم لا كسب" — بل على العكس تماماً. نعمل على تخفيف ألمك منذ الجلسة الأولى، باستخدام تقنيات لطيفة ومبنية على الأدلة العلمية تعمل مع جسمك لا ضده. يجب أن تغادر كل جلسة وأنت أفضل حالاً مما دخلت.',
+        'faq_3_q': 'هل أحتاج إلى تحويلة من طبيب أو تقرير طبي للحجز؟',
+        'faq_3_a': 'لا حاجة لأي تحويلة. يمكنك الحجز مباشرة والقدوم كما أنت. زيارتك الأولى هي تقييم سريري شامل يقوم فيه معالجك بفحص حالتك وفهم تاريخها وبناء خطة علاجية من الصفر. إن كان لديك صور أشعة أو تقارير سابقة، أحضرها معك — لكنها ليست شرطاً للبدء.',
+        'faq_4_q': 'ما الفرق بين خدمة العلاج الطبيعي وخدمة التغذية العلاجية؟',
+        'faq_4_a': 'يركز العلاج الطبيعي على المشاكل الحركية والميكانيكية — الألم، وتقييد الحركة، والإصابات، والتعافي بعد الجراحة، والحالات العصبية كآلام الظهر والرقبة ومشاكل المفاصل وإعادة التأهيل بعد السكتة الدماغية. أما التغذية العلاجية فهي خدمة مستقلة تركز على تنظيم نظامك الغذائي ومساعدتك في الوصول إلى وزنك المثالي وبناء عادات صحية على المدى الطويل. بعض المرضى يستفيدون من الاثنين معاً — يمكن لمعالجك إرشادك لما يناسب حالتك.',
+        'faq_5_q': 'أعاني من حالتي منذ سنوات. هل لا يزال بإمكان العلاج الطبيعي مساعدتي؟',
+        'faq_5_a': 'بالتأكيد. في الواقع، غالبية المرضى الذين نعالجهم يعانون من حالات مزمنة — مشاكل موجودة منذ أشهر أو سنوات. حالات مثل التهاب المفاصل والآلام المزمنة في الظهر والرقبة والمشاكل العصبية القديمة تستجيب جيداً جداً للعلاج الطبيعي المناسب. لا يوجد وقت متأخر للبدء. كثير من مرضانا جربوا علاجات أخرى من قبل ووجدوا أخيراً راحة حقيقية هنا.',
 
         // ─── Location ───
         'sec_location_title': 'زوروا عيادتنا',

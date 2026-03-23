@@ -275,6 +275,28 @@ function initLightbox() {
 }
 
 /* ══════════════════════════════════════════════
+   FAQ ACCORDION
+══════════════════════════════════════════════ */
+function initFaq() {
+    document.querySelectorAll('.faq-toggle').forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const answer = toggle.nextElementSibling;
+            const isOpen = answer.classList.contains('open');
+            // Close all others
+            document.querySelectorAll('.faq-answer.open').forEach(a => {
+                a.classList.remove('open');
+                a.previousElementSibling.setAttribute('aria-expanded', 'false');
+            });
+            // Toggle this one
+            if (!isOpen) {
+                answer.classList.add('open');
+                toggle.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+}
+
+/* ══════════════════════════════════════════════
    FIRST VISIT ACCORDION
 ══════════════════════════════════════════════ */
 function initAccordion() {
@@ -444,7 +466,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Modals & overlays
     initServiceModal();
-    initLightbox();
+    initFaq();
     initAccordion();
 
     // Forms
