@@ -280,14 +280,17 @@ function initLightbox() {
 function initFaq() {
     document.querySelectorAll('.faq-toggle').forEach(toggle => {
         toggle.addEventListener('click', () => {
-            const answer = toggle.nextElementSibling;
+            const item = toggle.closest('.faq-item');
+            const answer = item.querySelector('.faq-answer');
             const isOpen = answer.classList.contains('open');
-            // Close all others
+
+            // Close all open answers first
             document.querySelectorAll('.faq-answer.open').forEach(a => {
                 a.classList.remove('open');
-                a.previousElementSibling.setAttribute('aria-expanded', 'false');
+                a.closest('.faq-item').querySelector('.faq-toggle').setAttribute('aria-expanded', 'false');
             });
-            // Toggle this one
+
+            // Open this one if it was closed
             if (!isOpen) {
                 answer.classList.add('open');
                 toggle.setAttribute('aria-expanded', 'true');
