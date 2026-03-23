@@ -189,13 +189,25 @@ ul { list-style: none; }
 .site-header.transparent .logo-name { color: var(--white); }
 .site-header.transparent .logo-tagline { color: rgba(255,255,255,.7); }
 
-/* Nav Links */
+/* Nav Links — body-level element, positioned over header on desktop */
 .nav-links {
+  /* Desktop: float centered over navbar via fixed positioning */
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: var(--nav-h);
+  z-index: 1001;
   display: flex;
   align-items: center;
   gap: 4px;
-  flex: 1;
-  justify-content: center;
+  background: transparent;
+  /* Not inside header so backdrop-filter stacking context never affects it */
+}
+[dir="rtl"] .nav-links {
+  left: auto;
+  right: 50%;
+  transform: translateX(50%);
 }
 .nav-links a {
   padding: 7px 14px;
@@ -204,10 +216,15 @@ ul { list-style: none; }
   font-weight: 500;
   color: var(--gray-700);
   transition: var(--transition);
+  white-space: nowrap;
 }
 .nav-links a:hover { color: var(--navy); background: var(--gray-50); }
-.site-header.transparent .nav-links a { color: rgba(255,255,255,.85); }
-.site-header.transparent .nav-links a:hover { color: var(--white); background: rgba(255,255,255,.12); }
+/* Transparent header state — links need to be white */
+.site-header.transparent ~ .nav-links a { color: rgba(255,255,255,.85); }
+.site-header.transparent ~ .nav-links a:hover { color: var(--white); background: rgba(255,255,255,.12); }
+/* Scrolled state — dark links again */
+.site-header.scrolled ~ .nav-links a { color: var(--gray-700); }
+
 
 /* Nav Actions */
 .nav-actions {
@@ -273,77 +290,79 @@ ul { list-style: none; }
   position: fixed;
   inset: 0;
   background: rgba(1,44,79,.55);
-  z-index: 990;
+  z-index: 1090;
   backdrop-filter: blur(4px);
 }
 .nav-overlay.active { display: block; }
 
 @media (max-width: 899px) {
   .nav-links {
+    /* Mobile drawer: slide in from right, fully viewport-relative */
     position: fixed;
-    top: 0; right: 0;
+    top: 0;
+    right: 0;
+    left: auto;
+    transform: translateX(100%);
     width: min(280px, 78vw);
-    height: 100vh;
+    height: 100dvh;
     background: var(--white);
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    padding: calc(var(--nav-h) + 32px) 16px 40px;
-    z-index: 995;
-    transform: translateX(110%);
-    transition: transform .35s cubic-bezier(.4,0,.2,1);
-    box-shadow: -8px 0 40px rgba(0,0,0,.2);
-    gap: 4px;
+    padding: calc(var(--nav-h) + 28px) 0 40px;
+    z-index: 1100;
+    transition: transform .32s cubic-bezier(.4,0,.2,1);
+    box-shadow: -6px 0 32px rgba(0,0,0,.22);
+    gap: 0;
     overflow-y: auto;
-    /* Must NOT be inside a parent with overflow:hidden — now at body level */
   }
   [dir="rtl"] .nav-links {
-    right: auto; left: 0;
-    transform: translateX(-110%);
-    box-shadow: 8px 0 40px rgba(0,0,0,.2);
+    right: auto;
+    left: 0;
+    transform: translateX(-100%);
+    box-shadow: 6px 0 32px rgba(0,0,0,.22);
   }
-  .nav-links.open { transform: translateX(0); }
-  [dir="rtl"] .nav-links.open { transform: translateX(0); }
+  .nav-links.open { transform: translateX(0) !important; }
+  .nav-links li { width: 100%; }
   .nav-links a {
     display: block;
-    padding: 15px 18px;
-    border-radius: var(--radius-md);
-    font-size: 1rem;
+    padding: 17px 26px;
+    border-radius: 0;
+    font-size: 1.05rem;
     font-weight: 500;
     color: var(--text);
     border-bottom: 1px solid var(--gray-100);
     transition: background var(--transition), color var(--transition);
-    line-height: 1.3;
+    white-space: normal;
+    line-height: 1.4;
   }
+  [dir="rtl"] .nav-links a { text-align: right; }
   .nav-links li:last-child a { border-bottom: none; }
   .nav-links a:hover,
   .nav-links a.active-nav {
     background: var(--off-white);
     color: var(--navy);
-    padding-left: 22px;
+    font-weight: 600;
   }
-  [dir="rtl"] .nav-links a:hover,
-  [dir="rtl"] .nav-links a.active-nav { padding-left: 18px; padding-right: 22px; }
-  /* Nav container — no overflow hidden, just tight spacing */
+  /* Mobile drawer always uses dark text regardless of header state */
+  .site-header.transparent ~ .nav-links a { color: var(--text); }
+  .site-header.transparent ~ .nav-links a:hover { color: var(--navy); background: var(--off-white); }
+
   .nav-container { gap: 8px; padding: 0 14px; }
-  /* Logo */
   .logo-tagline { display: none; }
   .logo-name { font-size: .95rem; }
   .nav-logo { gap: 8px; }
   .nav-logo img { width: 36px; height: 36px; }
-  /* Lang button */
   .lang-btn { padding: 5px 10px; font-size: .8rem; flex-shrink: 0; }
-  /* Hide phone */
   .nav-phone { display: none; }
-  /* Hamburger */
   .hamburger-btn {
     display: flex;
     flex-shrink: 0;
-    min-width: 36px;
-    min-height: 36px;
+    min-width: 40px;
+    min-height: 40px;
     align-items: center;
     justify-content: center;
-    padding: 7px;
+    padding: 8px;
     border-radius: var(--radius-sm);
   }
   .nav-actions { gap: 8px; flex-wrap: nowrap; }
