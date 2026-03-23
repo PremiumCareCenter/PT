@@ -394,10 +394,10 @@ function initBookingForm() {
 }
 
 /* ══════════════════════════════════════════════
-   FLOATING WHATSAPP — hide near contact section
+   FLOATING CONTACT — hide near contact section
 ══════════════════════════════════════════════ */
 function initFloatingWhatsapp() {
-    const btn = document.getElementById('whatsapp-float');
+    const btn = document.getElementById('float-contact');
     const contact = document.getElementById('contact');
     if (!btn || !contact) return;
 

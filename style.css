@@ -1211,13 +1211,41 @@ ul { list-style: none; }
 .footer-legal a:hover { color: var(--white); }
 
 /* ═══════════════════════════════════════════
-   FLOATING WHATSAPP
+   FLOATING CONTACT GROUP
 ═══════════════════════════════════════════ */
-.whatsapp-float {
+.float-contact {
   position: fixed;
   bottom: 28px;
   right: 28px;
   z-index: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition: opacity var(--transition), transform var(--transition);
+}
+[dir="rtl"] .float-contact { right: auto; left: 28px; }
+.float-contact.hide { opacity: 0; pointer-events: none; transform: scale(.8); }
+
+/* Phone button */
+.float-phone {
+  width: 46px;
+  height: 46px;
+  background: var(--navy);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.1rem;
+  box-shadow: 0 4px 16px rgba(1,60,109,.35);
+  transition: transform var(--transition), box-shadow var(--transition);
+  position: relative;
+}
+.float-phone:hover { transform: scale(1.08); box-shadow: 0 6px 24px rgba(1,60,109,.5); }
+
+/* WhatsApp button */
+.whatsapp-float {
   width: 58px;
   height: 58px;
   background: #25d366;
@@ -1229,10 +1257,9 @@ ul { list-style: none; }
   font-size: 1.6rem;
   box-shadow: 0 4px 20px rgba(37,211,102,.5);
   transition: transform var(--transition), box-shadow var(--transition);
+  position: relative;
 }
-[dir="rtl"] .whatsapp-float { right: auto; left: 28px; }
 .whatsapp-float:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(37,211,102,.65); }
-.whatsapp-float.hide { opacity: 0; pointer-events: none; transform: scale(.8); }
 
 .whatsapp-pulse {
   position: absolute;
@@ -1246,7 +1273,9 @@ ul { list-style: none; }
   50% { transform: scale(1.2); opacity: 0; }
 }
 
-.whatsapp-tooltip {
+/* Shared tooltip style */
+.whatsapp-tooltip,
+.float-tooltip {
   position: absolute;
   right: calc(100% + 10px);
   top: 50%;
@@ -1262,8 +1291,10 @@ ul { list-style: none; }
   transition: opacity var(--transition);
   pointer-events: none;
 }
-[dir="rtl"] .whatsapp-tooltip { right: auto; left: calc(100% + 10px); }
-.whatsapp-tooltip::after {
+[dir="rtl"] .whatsapp-tooltip,
+[dir="rtl"] .float-tooltip { right: auto; left: calc(100% + 10px); }
+.whatsapp-tooltip::after,
+.float-tooltip::after {
   content: '';
   position: absolute;
   right: -5px;
@@ -1273,8 +1304,14 @@ ul { list-style: none; }
   border-right: none;
   border-left-color: var(--navy-dark);
 }
-[dir="rtl"] .whatsapp-tooltip::after { right: auto; left: -5px; border-left: none; border-right-color: var(--navy-dark); }
-.whatsapp-float:hover .whatsapp-tooltip { opacity: 1; }
+[dir="rtl"] .whatsapp-tooltip::after,
+[dir="rtl"] .float-tooltip::after {
+  right: auto; left: -5px;
+  border-left: none;
+  border-right-color: var(--navy-dark);
+}
+.whatsapp-float:hover .whatsapp-tooltip,
+.float-phone:hover .float-tooltip { opacity: 1; }
 
 /* ═══════════════════════════════════════════
    EXERCISES PAGE
