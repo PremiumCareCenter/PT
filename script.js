@@ -418,6 +418,7 @@ function initLangSwitch() {
     if (!btn) return;
     btn.addEventListener('click', () => {
         setLanguage(currentLang === 'en' ? 'ar' : 'en');
+        btn.blur();
     });
 }
 
