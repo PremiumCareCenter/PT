@@ -11,7 +11,7 @@ const dictionary = {
         'close': 'Close',
         'book_this_service': 'Book This Service',
         'get_directions': 'Get Directions',
-        'footer_copy': '© 2025 Premium Care Physiotherapy Center. All rights reserved.',
+        'footer_copy': '© 2026 Premium Care Physiotherapy Center. All rights reserved.',
         'footer_privacy': 'Privacy Policy',
         'footer_terms': 'Terms of Service',
         'footer_tagline': 'Upper Egypt\'s premier physiotherapy destination, combining evidence-based treatment with personalized care.',
@@ -30,6 +30,7 @@ const dictionary = {
 
         // ─── Navbar ───
         'nav_services': 'Services',
+        'nav_about': 'About',
         'nav_location': 'Location',
         'nav_team': 'Team',
         'nav_faq': 'FAQ',
@@ -39,14 +40,30 @@ const dictionary = {
         'nav_contact': 'Contact',
 
         // ─── Hero ───
-        'hero_title': 'Expert Physiotherapy &amp; Rehabilitation',
-        'hero_subtitle': 'Your journey to full recovery starts here — with evidence-based treatment, bilingual care, and evening appointments that work around your life.',
+        'hero_title': 'Luxor\'s Leading Physiotherapy &amp; Rehabilitation Center',
+        'hero_subtitle': 'Expert care for pain, injuries &amp; recovery — with evening appointments that fit your life.',
         'hero_trust_1': 'Licensed Therapists',
         'hero_trust_2': "Luxor's Premier PT",
         'hero_trust_3': 'Evening Hours',
         'cta_hero_primary': 'Book an Appointment',
         'cta_hero_secondary': 'See Our Services',
         'scroll_hint': 'Scroll to explore',
+
+        // ─── About ───
+        'about_eyebrow': 'About Premium Care',
+        'about_title': 'Built Around One Goal — Your Recovery',
+        'about_lead': 'Premium Care was founded in Luxor with a clear purpose: to bring the standard of physiotherapy that patients in major cities take for granted to Upper Egypt — accessible, expert, and genuinely personal.',
+        'about_body': 'Every session is led by certified, university-trained therapists who treat you as an individual — not a number. We combine evidence-based techniques with the kind of human warmth that makes recovery feel possible, even after years of chronic pain.',
+        'about_badge_1': 'University-Certified Therapists',
+        'about_badge_2': 'Arabic & English Sessions',
+        'about_badge_3': 'Evening Clinic — Every Day',
+        'about_card_1_title': '500+ Patients Recovered',
+        'about_card_1_sub': 'and counting — in Luxor & Upper Egypt',
+        'about_card_2_title': '5★ Patient Rating',
+        'about_card_2_sub': 'consistently praised for precision & care',
+        'about_card_3_title': '5+ Years of Excellence',
+        'about_card_3_sub': 'serving the Luxor community',
+
 
         // ─── Stats Bar ───
         'stat_1_value': '500+',
@@ -227,7 +244,7 @@ const dictionary = {
         'close': 'إغلاق',
         'book_this_service': 'احجز هذه الخدمة',
         'get_directions': 'الاتجاهات',
-        'footer_copy': '© 2025 مركز بريميوم كير للعلاج الطبيعي. جميع الحقوق محفوظة.',
+        'footer_copy': '© 2026 مركز بريميوم كير للعلاج الطبيعي. جميع الحقوق محفوظة.',
         'footer_privacy': 'سياسة الخصوصية',
         'footer_terms': 'شروط الخدمة',
         'footer_tagline': 'الوجهة الأولى للعلاج الطبيعي في صعيد مصر، نجمع بين العلاج المبني على الأدلة والرعاية الشخصية.',
@@ -246,6 +263,7 @@ const dictionary = {
 
         // ─── Navbar ───
         'nav_services': 'خدماتنا',
+        'nav_about': 'عن العيادة',
         'nav_location': 'الموقع',
         'nav_team': 'فريقنا',
         'nav_faq': 'الأسئلة الشائعة',
@@ -255,14 +273,30 @@ const dictionary = {
         'nav_contact': 'تواصل',
 
         // ─── Hero ───
-        'hero_title': 'علاج طبيعي وإعادة تأهيل متخصص',
-        'hero_subtitle': 'رحلة تعافيك تبدأ هنا — علاج مبني على الأدلة، رعاية ثنائية اللغة، ومواعيد مسائية تناسب جدولك.',
+        'hero_title': 'المركز الأول للعلاج الطبيعي وإعادة التأهيل في الأقصر',
+        'hero_subtitle': 'رعاية متخصصة للألم والإصابات والتعافي — بمواعيد مسائية تناسب حياتك.',
         'hero_trust_1': 'معالجون معتمدون',
         'hero_trust_2': 'الأول في الأقصر',
         'hero_trust_3': 'مواعيد مسائية',
         'cta_hero_primary': 'احجز موعدك الآن',
         'cta_hero_secondary': 'اكتشف خدماتنا',
         'scroll_hint': 'مرر للاستكشاف',
+
+        // ─── About ───
+        'about_eyebrow': 'عن بريميوم كير',
+        'about_title': 'بُني حول هدف واحد — تعافيك',
+        'about_lead': 'تأسس بريميوم كير في الأقصر بهدف واضح: تقديم مستوى العلاج الطبيعي الذي يجده المرضى في المدن الكبرى — لكن هنا في صعيد مصر، متاحاً ومتخصصاً وشخصياً حقاً.',
+        'about_body': 'كل جلسة يقودها معالجون معتمدون مؤهلون جامعياً يتعاملون معك كفرد — وليس كرقم. نجمع بين التقنيات المبنية على الأدلة والدفء الإنساني الذي يجعل التعافي ممكناً حتى بعد سنوات من الألم المزمن.',
+        'about_badge_1': 'معالجون معتمدون جامعياً',
+        'about_badge_2': 'جلسات بالعربية والإنجليزية',
+        'about_badge_3': 'عيادة مسائية — كل يوم',
+        'about_card_1_title': '+500 مريض تعافى',
+        'about_card_1_sub': 'والعدد في ازدياد — في الأقصر وصعيد مصر',
+        'about_card_2_title': 'تقييم 5 نجوم',
+        'about_card_2_sub': 'يُشاد به باستمرار للدقة والرعاية',
+        'about_card_3_title': '+5 سنوات من التميز',
+        'about_card_3_sub': 'في خدمة مجتمع الأقصر',
+
 
         // ─── Stats Bar ───
         'stat_1_value': '+500',

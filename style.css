@@ -489,6 +489,92 @@ ul { list-style: none; }
 }
 
 /* ═══════════════════════════════════════════
+   ABOUT
+═══════════════════════════════════════════ */
+.about-section { background: var(--white); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+@media (max-width: 860px) { .about-grid { grid-template-columns: 1fr; gap: 48px; } }
+
+.about-eyebrow {
+  display: inline-block;
+  font-size: .78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--gold-dark);
+  margin-bottom: 14px;
+}
+.about-lead {
+  font-size: 1.05rem;
+  color: var(--text);
+  line-height: 1.75;
+  margin: 16px 0 12px;
+  font-weight: 500;
+}
+.about-body {
+  font-size: .93rem;
+  color: var(--gray-500);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+.about-badges { display: flex; flex-direction: column; gap: 12px; }
+.about-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+.about-badge i { color: var(--gold-dark); width: 18px; flex-shrink: 0; }
+
+/* Right column — stacked info cards */
+.about-card-stack { display: flex; flex-direction: column; gap: 14px; }
+.about-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 22px 26px;
+  border-radius: var(--radius-lg);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.about-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.about-card i { font-size: 1.4rem; margin-top: 2px; flex-shrink: 0; }
+.about-card strong { display: block; font-size: 1rem; margin-bottom: 4px; font-weight: 700; }
+.about-card span { font-size: .83rem; line-height: 1.5; }
+
+.about-card-main {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+  box-shadow: var(--shadow-md);
+}
+.about-card-main i { color: var(--gold); }
+.about-card-main strong { color: var(--white); }
+.about-card-main span { color: rgba(255,255,255,.7); }
+
+.about-card-accent {
+  background: var(--white);
+  border: 1.5px solid var(--gray-100);
+  box-shadow: var(--shadow-sm);
+}
+.about-card-accent i { color: var(--gold-dark); }
+.about-card-accent strong { color: var(--navy); }
+.about-card-accent span { color: var(--gray-500); }
+
+.about-card-secondary {
+  background: var(--white);
+  border: 1.5px solid var(--gray-100);
+  box-shadow: var(--shadow-sm);
+}
+.about-card-secondary i { color: var(--navy); }
+.about-card-secondary strong { color: var(--navy); }
+.about-card-secondary span { color: var(--gray-500); }
+
+/* ═══════════════════════════════════════════
    STATS BAR
 ═══════════════════════════════════════════ */
 .stats-bar {
