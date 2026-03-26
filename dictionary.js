@@ -30,6 +30,7 @@ const dictionary = {
 
         // ─── Navbar ───
         'nav_services': 'Services',
+        'nav_conditions': 'Conditions',
         'nav_about': 'About',
         'nav_location': 'Location',
         'nav_team': 'Team',
@@ -108,6 +109,24 @@ const dictionary = {
         'why_3_desc': 'Appointments start on time, every time. No long waits, no wasted visits. We know your schedule matters as much as your recovery does.',
         'why_4_title': 'A Clinic That Feels Like Home',
         'why_4_desc': 'Warm, humble, and genuinely caring — our patients don\'t just recover here, they feel heard and welcomed from the very first minute they walk in.',
+
+        // ─── Conditions Library ───
+        'sec_conditions_title': 'Conditions We Treat',
+        'sec_conditions_subtitle': 'In-depth guides for each condition — what it is, what causes it, and exactly how we treat it.',
+        'cond_lbp_title': 'Lower Back Pain',
+        'cond_lbp_desc': 'The world\'s leading cause of disability. Most cases resolve fully with the right physiotherapy approach — no surgery needed.',
+        'cond_neck_title': 'Neck Pain & Stiffness',
+        'cond_neck_desc': 'Postural, disc-related, or muscular — neck pain responds extremely well to manual therapy and targeted exercise.',
+        'cond_knee_title': 'Knee Osteoarthritis',
+        'cond_knee_desc': 'Cartilage loss causing pain and stiffness. Physiotherapy significantly reduces symptoms and delays the need for replacement.',
+        'cond_shoulder_title': 'Frozen Shoulder',
+        'cond_shoulder_desc': 'Adhesive capsulitis causing severe stiffness and pain. Treatable with manual mobilisation, ultrasound, and targeted movement.',
+        'cond_sciatica_title': 'Sciatica',
+        'cond_sciatica_desc': 'Nerve pain radiating from the lower back down the leg. Targeted decompression and nerve mobilisation provide lasting relief.',
+        'cond_stroke_title': 'Stroke Rehabilitation',
+        'cond_stroke_desc': 'Specialist neurological physiotherapy to recover movement, strength, and independence after a stroke.',
+        'cond_read_guide': 'Read Guide',
+        'cond_coming_soon': 'Coming Soon',
 
         // ─── Team ───
         'sec_team_title': 'Meet Our Expert Team',
@@ -263,6 +282,7 @@ const dictionary = {
 
         // ─── Navbar ───
         'nav_services': 'خدماتنا',
+        'nav_conditions': 'الحالات',
         'nav_about': 'عن العيادة',
         'nav_location': 'الموقع',
         'nav_team': 'فريقنا',
@@ -341,6 +361,24 @@ const dictionary = {
         'why_3_desc': 'المواعيد تبدأ في وقتها دائماً. لا انتظار طويل، لا زيارات ضائعة. نحن نعلم أن جدولك مهم بقدر علاجك.',
         'why_4_title': 'عيادة تشعر فيها بالبيت',
         'why_4_desc': 'دافئ ومتواضع ومهتم حقاً — مرضانا لا يتعافون هنا فحسب، بل يشعرون بأنهم مسموعون ومرحَّب بهم من اللحظة الأولى التي يدخلون فيها.',
+
+        // ─── Conditions Library ───
+        'sec_conditions_title': 'الحالات التي نعالجها',
+        'sec_conditions_subtitle': 'أدلة شاملة لكل حالة — ما هي، ما أسبابها، وكيف نعالجها بالضبط.',
+        'cond_lbp_title': 'آلام أسفل الظهر',
+        'cond_lbp_desc': 'السبب الأول للإعاقة في العالم. معظم الحالات تتعافى بالكامل مع نهج العلاج الطبيعي الصحيح — دون جراحة.',
+        'cond_neck_title': 'آلام الرقبة والتيبس',
+        'cond_neck_desc': 'وضعية أو قرصية أو عضلية — آلام الرقبة تستجيب استجابةً ممتازة للعلاج اليدوي والتمارين الموجهة.',
+        'cond_knee_title': 'التهاب مفصل الركبة',
+        'cond_knee_desc': 'فقدان الغضروف يُسبب ألماً وتيبساً. العلاج الطبيعي يُقلل الأعراض بشكل ملحوظ ويؤخر الحاجة للاستبدال.',
+        'cond_shoulder_title': 'الكتف المتجمد',
+        'cond_shoulder_desc': 'التهاب المحفظة اللاصق يُسبب تيبساً وألماً شديدين. قابل للعلاج بالتعبئة اليدوية والموجات فوق الصوتية والحركة الموجهة.',
+        'cond_sciatica_title': 'عرق النسا',
+        'cond_sciatica_desc': 'ألم عصبي ينتشر من أسفل الظهر إلى الساق. إفراج العصب الموجه يوفر راحة دائمة.',
+        'cond_stroke_title': 'إعادة التأهيل بعد السكتة الدماغية',
+        'cond_stroke_desc': 'علاج طبيعي عصبي متخصص لاستعادة الحركة والقوة والاستقلالية بعد السكتة الدماغية.',
+        'cond_read_guide': 'اقرأ الدليل',
+        'cond_coming_soon': 'قريباً',
 
         // ─── Team ───
         'sec_team_title': 'تعرف على فريقنا المتخصص',

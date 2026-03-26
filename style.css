@@ -261,11 +261,16 @@ ul { list-style: none; }
   border: 1.5px solid var(--navy);
   transition: var(--transition);
 }
-.lang-btn:hover { background: var(--navy); color: var(--white); }
+/* Hover only on real pointer devices — prevents blue "stuck" state on mobile tap */
+@media (hover: hover) {
+  .lang-btn:hover { background: var(--navy); color: var(--white); }
+  .site-header.transparent .lang-btn:hover { background: rgba(255,255,255,.15); }
+}
 .lang-btn:focus { outline: none; }
 .lang-btn:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+/* Suppress WebKit blue tap highlight on all buttons */
+button { -webkit-tap-highlight-color: transparent; }
 .site-header.transparent .lang-btn { color: var(--white); border-color: rgba(255,255,255,.6); }
-.site-header.transparent .lang-btn:hover { background: rgba(255,255,255,.15); }
 
 .nav-cta { display: none; }
 @media (min-width: 960px) { .nav-cta { display: inline-flex; } }
@@ -856,6 +861,84 @@ ul { list-style: none; }
 .why-icon i { color: var(--navy-dark); font-size: 1.3rem; }
 .why-card h3 { font-family: var(--font-serif); font-size: 1.15rem; color: var(--navy); margin-bottom: 10px; }
 .why-card p { color: var(--gray-500); font-size: .92rem; line-height: 1.65; }
+
+/* ═══════════════════════════════════════════
+   CONDITIONS LIBRARY
+═══════════════════════════════════════════ */
+.conditions-section { background: var(--off-white); }
+.conditions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+.condition-card {
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-md);
+  padding: 28px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  color: inherit;
+}
+.condition-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--gold);
+}
+.condition-card.coming-soon {
+  opacity: .55;
+  cursor: default;
+  pointer-events: none;
+}
+.condition-card-icon {
+  width: 48px; height: 48px;
+  background: var(--navy);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.condition-card-icon i { color: var(--gold); font-size: 1.1rem; }
+.condition-card h4 {
+  font-size: .98rem;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.3;
+}
+.condition-card p {
+  font-size: .82rem;
+  color: var(--gray-500);
+  line-height: 1.55;
+  flex: 1;
+}
+.condition-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+.condition-read-link {
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: gap .2s;
+}
+.condition-card:hover .condition-read-link { gap: 9px; }
+.condition-soon-badge {
+  font-size: .72rem;
+  font-weight: 600;
+  background: var(--gray-100);
+  color: var(--gray-500);
+  padding: 3px 10px;
+  border-radius: 50px;
+}
 
 /* ═══════════════════════════════════════════
    TEAM
