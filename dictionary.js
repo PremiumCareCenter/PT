@@ -111,7 +111,7 @@ const dictionary = {
         'why_4_desc': 'Warm, humble, and genuinely caring — our patients don\'t just recover here, they feel heard and welcomed from the very first minute they walk in.',
 
         // ─── Conditions Library ───
-        'sec_conditions_title': 'Conditions We Treat',
+        'sec_conditions_title': 'Know Your Condition',
         'sec_conditions_subtitle': 'In-depth guides for each condition — what it is, what causes it, and exactly how we treat it.',
         'cond_lbp_title': 'Lower Back Pain',
         'cond_lbp_desc': 'The world\'s leading cause of disability. Most cases resolve fully with the right physiotherapy approach — no surgery needed.',
@@ -363,7 +363,7 @@ const dictionary = {
         'why_4_desc': 'دافئ ومتواضع ومهتم حقاً — مرضانا لا يتعافون هنا فحسب، بل يشعرون بأنهم مسموعون ومرحَّب بهم من اللحظة الأولى التي يدخلون فيها.',
 
         // ─── Conditions Library ───
-        'sec_conditions_title': 'الحالات التي نعالجها',
+        'sec_conditions_title': 'اعرف حالتك',
         'sec_conditions_subtitle': 'أدلة شاملة لكل حالة — ما هي، ما أسبابها، وكيف نعالجها بالضبط.',
         'cond_lbp_title': 'آلام أسفل الظهر',
         'cond_lbp_desc': 'السبب الأول للإعاقة في العالم. معظم الحالات تتعافى بالكامل مع نهج العلاج الطبيعي الصحيح — دون جراحة.',
