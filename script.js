@@ -31,6 +31,13 @@ function updateAllContent() {
             el.setAttribute(attr, dictionary[currentLang][key]);
         }
     });
+    // Update placeholder via data-key-placeholder attribute
+    document.querySelectorAll('[data-key-placeholder]').forEach(el => {
+        const key = el.dataset.keyPlaceholder;
+        if (dictionary[currentLang]?.[key] !== undefined) {
+            el.setAttribute('placeholder', dictionary[currentLang][key]);
+        }
+    });
     // Update select options
     document.querySelectorAll('select option.data-text').forEach(el => {
         const key = el.dataset.key;
@@ -475,6 +482,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Forms
     initBookingForm();
+    initStarPicker();
 
     // Floating elements
     initFloatingWhatsapp();
@@ -497,3 +505,72 @@ document.addEventListener('DOMContentLoaded', () => {
         if (exercisesLink) exercisesLink.classList.add('active-nav');
     }
 });
+
+/* ══════════════════════════════════════════════
+   STAR PICKER — review form
+══════════════════════════════════════════════ */
+function initStarPicker() {
+    const picker = document.getElementById('star-picker');
+    if (!picker) return;
+    const btns = picker.querySelectorAll('.star-btn');
+
+    function highlight(val) {
+        btns.forEach(b => b.classList.toggle('active', Number(b.dataset.val) <= val));
+    }
+
+    btns.forEach(btn => {
+        btn.addEventListener('mouseenter', () => highlight(Number(btn.dataset.val)));
+        btn.addEventListener('click', () => {
+            picker.dataset.rating = btn.dataset.val;
+            highlight(Number(btn.dataset.val));
+        });
+    });
+
+    picker.addEventListener('mouseleave', () => {
+        highlight(Number(picker.dataset.rating || 5));
+    });
+
+    // Default 5 stars
+    picker.dataset.rating = '5';
+    highlight(5);
+}
+
+/* ══════════════════════════════════════════════
+   SUBMIT REVIEW → WhatsApp
+══════════════════════════════════════════════ */
+function submitReview() {
+    const lang   = currentLang;
+    const dict   = dictionary[lang] || {};
+    const rating = Number(document.getElementById('star-picker')?.dataset.rating || 5);
+    const name   = document.getElementById('review-name')?.value.trim();
+    const cond   = document.getElementById('review-condition')?.value.trim();
+    const msg    = document.getElementById('review-msg')?.value.trim();
+
+    if (!msg) {
+        alert(dict.review_empty_alert || 'Please write your review before sending.');
+        return;
+    }
+
+    const stars  = '★'.repeat(rating) + '☆'.repeat(5 - rating);
+    const nameStr = name ? `\n👤 ${name}` : '';
+    const condStr = cond ? `\n🏷️ ${cond}` : '';
+
+    const waMsg =
+`⭐ *Premium Care — Patient Review*
+
+${stars}${nameStr}${condStr}
+
+💬 "${msg}"`;
+
+    const link = `https://wa.me/201022562927?text=${encodeURIComponent(waMsg)}`;
+    window.open(link, '_blank', 'noopener,noreferrer');
+
+    // Reset form
+    document.getElementById('review-name').value  = '';
+    document.getElementById('review-condition').value = '';
+    document.getElementById('review-msg').value   = '';
+    const picker = document.getElementById('star-picker');
+    if (picker) { picker.dataset.rating = '5'; initStarPicker(); }
+
+    alert(dict.review_sent_alert || 'Thank you! WhatsApp is opening — please press Send.');
+}
