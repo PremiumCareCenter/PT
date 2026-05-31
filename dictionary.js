@@ -143,6 +143,8 @@ const dictionary = {
         'cond_postsurg_desc': 'Structured recovery after knee, hip, spine, or shoulder surgery. Restores strength, movement, and daily function — safely and systematically.',
         'cond_stroke_title': 'Stroke Rehabilitation',
         'cond_stroke_desc': 'Specialist neurological physiotherapy to recover movement, strength, and independence after a stroke.',
+        'cond_sports_title': 'Sports Injuries',
+        'cond_sports_desc': 'Precise assessment and structured return-to-sport programmes for acute and overuse injuries — from ankle sprains to ACL rehabilitation.',
         'cond_read_guide': 'Read Guide',
         'cond_coming_soon': 'Coming Soon',
 
@@ -434,6 +436,8 @@ const dictionary = {
         'cond_postsurg_desc': 'تعافٍ منظَّم بعد عمليات الركبة والورك والعمود الفقري والكتف. يُعيد القوة والحركة والحياة اليومية — بأمان وتدرج.',
         'cond_stroke_title': 'إعادة التأهيل بعد السكتة الدماغية',
         'cond_stroke_desc': 'علاج طبيعي عصبي متخصص لاستعادة الحركة والقوة والاستقلالية بعد السكتة الدماغية.',
+        'cond_sports_title': 'إصابات الرياضيين',
+        'cond_sports_desc': 'تقييم دقيق وبرامج منظمة للعودة للرياضة — من التواء الكاحل حتى تأهيل الرباط الصليبي الأمامي.',
         'cond_read_guide': 'اقرأ الدليل',
         'cond_coming_soon': 'قريباً',
 
