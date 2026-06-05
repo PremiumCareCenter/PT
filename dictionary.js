@@ -145,6 +145,10 @@ const dictionary = {
         'cond_stroke_desc': 'Specialist neurological physiotherapy to recover movement, strength, and independence after a stroke.',
         'cond_sports_title': 'Sports Injuries',
         'cond_sports_desc': 'Precise assessment and structured return-to-sport programmes for acute and overuse injuries — from ankle sprains to ACL rehabilitation.',
+        'cond_pf_title': 'Plantar Fasciitis',
+        'cond_pf_desc': 'Sharp heel pain with your first morning steps? Expert treatment for the most common foot condition — most patients recover fully without injections or surgery.',
+        'cond_sc_title': 'Scoliosis',
+        'cond_sc_desc': 'Evidence-based scoliosis-specific exercises and postural rehabilitation for children and adults — to slow progression, reduce pain, and maintain an active life.',
         'cond_read_guide': 'Read Guide',
         'cond_coming_soon': 'Coming Soon',
 
@@ -438,6 +442,10 @@ const dictionary = {
         'cond_stroke_desc': 'علاج طبيعي عصبي متخصص لاستعادة الحركة والقوة والاستقلالية بعد السكتة الدماغية.',
         'cond_sports_title': 'إصابات الرياضيين',
         'cond_sports_desc': 'تقييم دقيق وبرامج منظمة للعودة للرياضة — من التواء الكاحل حتى تأهيل الرباط الصليبي الأمامي.',
+        'cond_pf_title': 'التهاب اللفافة الأخمصية',
+        'cond_pf_desc': 'ألم حاد في الكعب مع أولى خطواتك الصباحية؟ علاج متخصص لأكثر حالات القدم شيوعاً — معظم المرضى يتعافون تماماً دون حقن أو جراحة.',
+        'cond_sc_title': 'انحناء العمود الفقري (جنف)',
+        'cond_sc_desc': 'تمارين خاصة بالجنف مبنية على الأدلة وتأهيل وضعي للأطفال والبالغين — لإبطاء التقدم وتقليل الألم والحفاظ على حياة نشطة.',
         'cond_read_guide': 'اقرأ الدليل',
         'cond_coming_soon': 'قريباً',
 
